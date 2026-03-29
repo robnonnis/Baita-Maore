@@ -473,7 +473,7 @@ function PH({go,lang,setLang}) {
       <div style={{...s.hero,background:"linear-gradient(160deg,#3d2008 0%,#6b3a1f 40%,#4a2510 100%)"}}>
         <div style={{position:"relative",padding:"50px 24px 36px",textAlign:"center"}}>
           <div style={s.eyebrow}>Laconi · Oristano · Sardegna</div>
-          <h1 style={s.heroTitle}>Baita<br/><em style={{fontStyle:"italic",color:c.sand}}>Maore</em></h1>
+          <img src="https://res.cloudinary.com/dovpg47yh/image/upload/v1774558967/IMG_8927_t7ppwk.png" alt="Baita Maore" style={{width:200,maxWidth:"65vw",display:"block",margin:"8px auto 12px",height:"auto"}}/>
           <div style={{fontSize:10,letterSpacing:"3px",textTransform:"uppercase",color:"rgba(244,237,224,0.45)",marginTop:10,fontFamily:"'Raleway',sans-serif",fontWeight:200}}>{t.heroSub}</div>
           <div style={{width:32,height:1,background:c.brownL,margin:"12px auto 0"}}/>
         </div>
@@ -567,8 +567,8 @@ function Suite({go,lang,setLang}) {
   const t = TR[lang];
   const [open,setOpen] = useState(null);
   const suites = [
-    { id:"superior", name:"Suite Superior", sub:"5 suite · Quercia · Abete · Pino · Leccio · Ulivo", rooms:["Quercia","Abete","Pino","Leccio","Ulivo"], desc:t.superiorDesc, features:t.superiorFeatures, photos:["https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80","https://images.unsplash.com/photo-1586105251261-72a756497a11?w=800&q=80"], color:c.brown },
-    { id:"luxury", name:"Luxury Suite", sub:"2 suite · Pioppo · Cedro · SPA privata", rooms:["Pioppo","Cedro"], desc:t.luxuryDesc, features:t.luxuryFeatures, photos:["https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&q=80","https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80"], color:"#2d1a0e" },
+    { id:"superior", name:"Suite Superior", sub:"5 suite · Quercia · Abete · Pino · Leccio · Ulivo", rooms:["Quercia","Abete","Pino","Leccio","Ulivo"], desc:t.superiorDesc, features:t.superiorFeatures, photos:["https://res.cloudinary.com/dovpg47yh/image/upload/v1774646558/PHOTO-2024-08-18-13-43-30_a5snh6.jpg","https://res.cloudinary.com/dovpg47yh/image/upload/v1774646556/IMG_8980_exojb1.jpg","https://res.cloudinary.com/dovpg47yh/image/upload/v1774646553/PHOTO-2024-08-18-13-43-35_qvibn9.jpg"], color:c.brown },
+    { id:"luxury", name:"Luxury Suite", sub:"2 suite · Pioppo · Cedro · SPA privata", rooms:["Pioppo","Cedro"], desc:t.luxuryDesc, features:t.luxuryFeatures, photos:["https://res.cloudinary.com/dovpg47yh/image/upload/v1774646490/PHOTO-2024-08-18-13-44-56_3_nohuim.jpg","https://res.cloudinary.com/dovpg47yh/image/upload/v1774646549/IMG_8992_blfhiq.jpg","https://res.cloudinary.com/dovpg47yh/image/upload/v1774646488/IMG_9005_y9cjyy.jpg"], color:"#2d1a0e" },
   ];
   return <div style={s.app}><FontLink/><LangToggle lang={lang} setLang={setLang}/>
     <PageHead title={t.suiteTitle} sub={t.suiteSub} back={()=>go("home")} icon={<Ic.building/>}/>
@@ -594,7 +594,7 @@ function Suite({go,lang,setLang}) {
               </div>
             </div>
             {isOpen&&(<div style={{borderTop:`1px solid ${c.sand}`}}>
-              {suite.photos[1]&&<img src={suite.photos[1]} alt={suite.name} style={{width:"100%",height:160,objectFit:"cover",display:"block"}}/>}
+              {suite.photos.length>1&&<div style={{display:"grid",gridTemplateColumns:suite.photos.length===2?"1fr":"1fr 1fr",gap:2}}>{suite.photos.slice(1).map((p,i)=><img key={i} src={p} alt={suite.name} style={{width:"100%",height:160,objectFit:"cover",display:"block"}}/>)}</div>}
               <div style={{padding:"16px 18px 20px"}}>
                 <p style={{fontSize:13.5,lineHeight:1.75,color:c.muted,margin:"0 0 16px"}}>{suite.desc}</p>
                 {suite.features.map((f,i)=><div key={i} style={{display:"flex",gap:10,padding:"9px 0",borderBottom:i<suite.features.length-1?`1px solid ${c.sand}`:"none",alignItems:"flex-start"}}><div style={{width:6,height:6,borderRadius:"50%",background:suite.color,flexShrink:0,marginTop:6}}/><span style={{fontSize:13.5}}>{f}</span></div>)}
@@ -614,6 +614,10 @@ function Spa({go,lang,setLang}) {
   return <div style={s.app}><FontLink/><LangToggle lang={lang} setLang={setLang}/>
     <PageHead title={t.spaTitle} sub={t.spaSub} back={()=>go("home")} icon={<Ic.spa/>}/>
     <div style={s.content}>
+      <div style={{borderRadius:18,overflow:"hidden",marginBottom:12,position:"relative",height:220}}>
+        <img src="https://res.cloudinary.com/dovpg47yh/image/upload/v1774646467/spa_baita_jndl4q.jpg" alt="SPA Baita Maore" style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}}/>
+        <div style={{position:"absolute",inset:0,background:"linear-gradient(to top,rgba(28,18,8,0.6) 0%,rgba(28,18,8,0) 50%)"}}/>
+      </div>
       <div style={s.hlBox}><div style={s.hlTitle}>{t.spaHL}</div><p style={{fontSize:14,lineHeight:1.7,opacity:0.92,margin:0}}>{t.spaHLText}</p></div>
       <Card><CT text={t.spaAreaLabel}/>{t.spaAreaItems.map((x,i)=><Rule key={i} t={x} last={i===t.spaAreaItems.length-1}/>)}</Card>
       <Card><CT text={t.spaLuxLabel}/>{t.spaLuxItems.map((x,i)=><Rule key={i} t={x} last={i===t.spaLuxItems.length-1}/>)}</Card>
@@ -636,6 +640,9 @@ function Piscina({go,lang,setLang}) {
   return <div style={s.app}><FontLink/><LangToggle lang={lang} setLang={setLang}/>
     <PageHead title={t.piscinaTitle} sub={t.piscinaSub} back={()=>go("home")} icon={<Ic.pool/>}/>
     <div style={s.content}>
+      <div style={{borderRadius:18,overflow:"hidden",marginBottom:12}}>
+        <img src="https://res.cloudinary.com/dovpg47yh/image/upload/v1774646455/IMG_9071_zkimuv.jpg" alt="Piscina Baita Maore" style={{width:"100%",height:220,objectFit:"cover",display:"block"}}/>
+      </div>
       <div style={s.hlBox}><div style={s.hlTitle}>{t.piscinaHL}</div><p style={{fontSize:14,lineHeight:1.7,opacity:0.92,margin:0}}>{t.piscinaHLText}</p></div>
       <Card><CT text={t.estateLabel}/>{t.estateItems.map((x,i)=><Rule key={i} t={x} last={i===t.estateItems.length-1}/>)}</Card>
       <Card><CT text={t.invernoLabel}/>{t.invernoItems.map((x,i)=><Rule key={i} t={x} last={i===t.invernoItems.length-1}/>)}</Card>
@@ -784,7 +791,7 @@ function Recensioni({go,lang,setLang}) {
         <div style={{fontSize:40,marginBottom:10}}>⭐⭐⭐⭐⭐</div>
         <p style={{fontFamily:"'Playfair Display',serif",fontSize:20,marginBottom:8}}>{t.starsLabel}</p>
         <p style={{fontSize:13,color:c.muted,marginBottom:20,lineHeight:1.6}}>{t.starsThanks.split("\n").map((l,i)=><span key={i}>{l}{i===0&&<br/>}</span>)}</p>
-        <a href="https://search.google.com/local/writereview?placeid=GOOGLE_PLACE_ID" target="_blank" rel="noreferrer" style={s.mapBtn}>{t.starsBtn}</a>
+        <a href="https://www.google.com/search?sca_esv=3d469d807f837c81&q=Baita+Maore&si=AL3DRZGNtcdgKOqVhotcr-UG2kkYpwR2WO4qu3O00NmpwBmLnelENfgjuP228Sq9Mu0JKBy_z4FZlQPBJQf0ePnqhto70ecszcuDObBbwo6mQQpuIptZpQ0%3D&sa=X&ved=2ahUKEwjp1p-H28WTAxUMgf0HHezMIY4Q_coHegQIMBAB" target="_blank" rel="noreferrer" style={s.mapBtn}>{t.starsBtn}</a>
       </Card>
       <Card><CT text={lang==="it"?"Cosa ci ha colpito di più?":"What impressed us most?"}/>{t.starsItems.map((x,i)=><Rule key={i} t={x} last={i===t.starsItems.length-1}/>)}</Card>
     </div>

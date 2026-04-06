@@ -133,7 +133,7 @@ const TR = {
       { emoji: "🚗", title: "Fiat 500 d'epoca", subtitle: "Cabrio rossa degli anni '50", detail: "Riviví gli anni '50 a bordo della nostra Fiat 500 rossa cabrio d'epoca. Un'esperienza unica per scoprire i borghi sardi.", photos: ["https://res.cloudinary.com/dovpg47yh/image/upload/v1775488680/PHOTO-2026-03-29-20-52-14_y17n81.jpg"] },
       { emoji: "🏍️", title: "Quad", subtitle: "Percorsi nascosti tra ruscelli e cascate", detail: "Esplora percorsi nascosti tra ruscelli, cascate e boschi incontaminati.", photos: [] },
       { emoji: "🚌", title: "Bus Vintage «Maoretto»", subtitle: "Picnic panoramico nel bosco", detail: "Uscita con il bus vintage Maoretto per un picnic in un punto panoramico o nel bosco.", price: "Set picnic € 75 a coppia", photos: ["https://res.cloudinary.com/dovpg47yh/image/upload/v1775488681/PHOTO-2026-03-29-20-52-16_12_jadhd9.jpg"], photoPosition: "center 30%" },
-      { emoji: "🧺", title: "Aperitivo nel bosco", subtitle: "O in punto panoramico", detail: "Un aperitivo al tramonto nel bosco o in uno dei punti panoramici più suggestivi di Laconi.", photos: ["https://res.cloudinary.com/dovpg47yh/image/upload/v1774646471/IMG_9037_bh16nc.jpg"] },
+      { emoji: "🧺", title: "Aperitivo nel bosco", subtitle: "O in punto panoramico", detail: "Un aperitivo al tramonto nel bosco o in uno dei punti panoramici più suggestivi di Laconi.", photos: ["https://res.cloudinary.com/dovpg47yh/image/upload/v1774646471/IMG_9037_bh16nc.jpg"], photoPosition: "center bottom" },
     ],
     fromBaitaLabel: "🥾 A piedi dalla Baita",
     fromBaita: [
@@ -290,7 +290,7 @@ const TR = {
       { emoji: "🚗", title: "Vintage Fiat 500", subtitle: "Red convertible from the 1950s", detail: "Relive the 1950s aboard our red vintage Fiat 500 convertible. A unique way to discover Sardinian villages.", photos: ["https://res.cloudinary.com/dovpg47yh/image/upload/v1775488680/PHOTO-2026-03-29-20-52-14_y17n81.jpg"] },
       { emoji: "🏍️", title: "Quad bike", subtitle: "Hidden trails through streams and waterfalls", detail: "Explore hidden trails with quad bikes, through streams, waterfalls and untouched woodland.", photos: [] },
       { emoji: "🚌", title: "Vintage Bus «Maoretto»", subtitle: "Panoramic picnic in the woods", detail: "A trip aboard our vintage Maoretto bus to a scenic viewpoint or secret forest clearing for a picnic.", price: "Picnic set € 75 per couple", photos: ["https://res.cloudinary.com/dovpg47yh/image/upload/v1775488681/PHOTO-2026-03-29-20-52-16_12_jadhd9.jpg"], photoPosition: "center 30%" },
-      { emoji: "🧺", title: "Aperitif in the woods", subtitle: "Or at a panoramic viewpoint", detail: "A sunset aperitif in the woods or at one of Laconi's most breathtaking viewpoints. A romantic and authentic experience.", photos: ["https://res.cloudinary.com/dovpg47yh/image/upload/v1774646471/IMG_9037_bh16nc.jpg"] },
+      { emoji: "🧺", title: "Aperitif in the woods", subtitle: "Or at a panoramic viewpoint", detail: "A sunset aperitif in the woods or at one of Laconi's most breathtaking viewpoints. A romantic and authentic experience.", photos: ["https://res.cloudinary.com/dovpg47yh/image/upload/v1774646471/IMG_9037_bh16nc.jpg"], photoPosition: "center bottom" },
     ],
     fromBaitaLabel: "🥾 On foot from Baita",
     fromBaita: [

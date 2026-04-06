@@ -470,11 +470,13 @@ function PH({go,lang,setLang}) {
   const ids = ["benvenuto","checkin","suite","spa","piscina","regole","posizione","escursioni","mangiare","recensioni","social","faq"];
   return (
     <div style={s.app}><FontLink/><LangToggle lang={lang} setLang={setLang}/>
-      <div style={{...s.hero,background:"linear-gradient(160deg,#3d2008 0%,#6b3a1f 40%,#4a2510 100%)"}}>
+      <div style={{...s.hero, background:"#1c1208", position:"relative", overflow:"hidden"}}>
+        <img src="https://res.cloudinary.com/dovpg47yh/image/upload/v1775488683/PHOTO-2026-03-29-20-52-16_1_ote8bb.jpg" alt="Baita Maore" style={{position:"absolute",top:0,left:0,width:"100%",height:"100%",objectFit:"cover",display:"block",opacity:0.55}}/>
+        <div style={{position:"absolute",inset:0,background:"linear-gradient(to bottom, rgba(28,18,8,0.3) 0%, rgba(28,18,8,0.75) 100%)"}}/>
         <div style={{position:"relative",padding:"50px 24px 36px",textAlign:"center"}}>
           <div style={s.eyebrow}>Laconi · Oristano · Sardegna</div>
           <img src="https://res.cloudinary.com/dovpg47yh/image/upload/v1774558967/IMG_8927_t7ppwk.png" alt="Baita Maore" style={{width:200,maxWidth:"65vw",display:"block",margin:"8px auto 12px",height:"auto"}}/>
-          <div style={{fontSize:10,letterSpacing:"3px",textTransform:"uppercase",color:"rgba(244,237,224,0.45)",marginTop:10,fontFamily:"'Raleway',sans-serif",fontWeight:200}}>{t.heroSub}</div>
+          <div style={{fontSize:10,letterSpacing:"3px",textTransform:"uppercase",color:"rgba(244,237,224,0.7)",marginTop:10,fontFamily:"'Raleway',sans-serif",fontWeight:200}}>{t.heroSub}</div>
           <div style={{width:32,height:1,background:c.brownL,margin:"12px auto 0"}}/>
         </div>
       </div>

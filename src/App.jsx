@@ -114,7 +114,7 @@ const TR = {
     piscinaTitle: "Piscina", piscinaSub: "Aperta tutto l'anno",
     piscinaHL: "In qualsiasi stagione", piscinaHLText: "La piscina è a vostra completa disposizione per tutta la durata del soggiorno.",
     estateLabel: "☀️ Estate", estateItems: ["Piscina esterna scoperta","Comodi lettini e divanetti","Relax sotto il sole tra i boschi sardi"],
-    invernoLabel: "❄️ Autunno / Inverno", invernoItems: ["Struttura retrattile — piscina coperta","Acqua riscaldata a 30–32 °C","Rifugio caldo immerso nel paesaggio innevato"],
+    invernoLabel: "❄️ Autunno / Inverno", invernoItems: ["Struttura retrattile — piscina coperta","Acqua riscaldata a 30–32 °C","Rifugio caldo immerso nel paesaggio autunnale dei boschi di Laconi"],
     // Regole
     regoleTitle: "Regole della Baita",
     regGen: "📋 Generali", regGenItems: ["Check-in dalle 14:00 — Check-out entro le 11:00","Comunicateci l'orario di arrivo previsto","Rispettare il numero massimo di ospiti"],
@@ -274,7 +274,7 @@ const TR = {
     piscinaTitle: "Pool", piscinaSub: "Open all year round",
     piscinaHL: "In every season", piscinaHLText: "The pool is at your complete disposal for the entire duration of your stay.",
     estateLabel: "☀️ Summer", estateItems: ["Outdoor open-air pool","Sun loungers and sofas","Relax in the sun among the Sardinian woods"],
-    invernoLabel: "❄️ Autumn / Winter", invernoItems: ["Retractable cover — indoor pool","Heated water at 30–32 °C","Warm retreat in a snowy landscape"],
+    invernoLabel: "❄️ Autumn / Winter", invernoItems: ["Retractable cover — indoor pool","Heated water at 30–32 °C","Warm retreat surrounded by the autumn woods of Laconi"],
     regoleTitle: "House Rules",
     regGen: "📋 General", regGenItems: ["Check-in from 14:00 — Check-out by 11:00","Please let us know your estimated arrival time","Respect the maximum number of guests"],
     regRisp: "🤫 Respect & Coexistence", regRispItems: ["Take care of common areas","Silence during night hours","Report any damage before check-out"],

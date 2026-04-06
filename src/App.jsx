@@ -574,8 +574,24 @@ function Suite({go,lang,setLang}) {
       id:"pino", name:"Suite Pino", type:"superior",
       photo:"https://res.cloudinary.com/dovpg47yh/image/upload/v1775508799/SuitePino1-1-1920x650_ovbpoz.jpg",
       desc: lang==="it" ? "Immersa nel profumo del legno di pino, questa suite vi accoglierà con calore e naturalezza. Un rifugio autentico per ritrovare la serenità." : "Surrounded by the scent of pine wood, this suite welcomes you with warmth and authenticity. A genuine retreat to rediscover serenity.",
-      features: lang==="it" ? ["Letto matrimoniale","Bagno privato con doccia a pioggia","Pavimenti in rovere","Veranda privata con vista giardino","Wi-Fi gratuito · TV · Minibar","Colazione inclusa"] : ["Double bed","Private bathroom with rain shower","Oak floors","Private veranda with garden view","Free Wi-Fi · TV · Minibar","Breakfast included"],
+      features: lang==="it" ? ["Letto matrimoniale","Bagno privato con doccia a pioggia","Pavimenti in rovere","Veranda e giardino privato","Wi-Fi · TV · AC · Minibar","Accappatoio, ciabatte, borsa SPA","Colazione inclusa"] : ["Double bed","Private bathroom with rain shower","Oak floors","Private veranda and garden","Wi-Fi · TV · AC · Minibar","Bathrobe, slippers, SPA bag","Breakfast included"],
       badge:"Superior", color:c.brown,
+    },
+    {
+      id:"quercia", name:"Suite Quercia", type:"superior",
+      photos:["https://res.cloudinary.com/dovpg47yh/image/upload/v1775509616/quercia_pbnmaz.jpg","https://res.cloudinary.com/dovpg47yh/image/upload/v1775509616/quercia_2_gvav0s.jpg"],
+      photo:"https://res.cloudinary.com/dovpg47yh/image/upload/v1775509616/quercia_pbnmaz.jpg",
+      desc: lang==="it" ? "La quercia, simbolo di forza e vita tranquilla, ispira questa suite energizzante. Due letti matrimoniali — uno al piano terra e uno sul soppalco — la rendono perfetta per famiglie o piccoli gruppi." : "The oak tree, symbol of strength and peaceful life, inspires this energising suite. Two double beds — one on the ground floor and one on the mezzanine — make it perfect for families or small groups.",
+      features: lang==="it" ? ["4 posti letto · 2 letti matrimoniali","Piano terra + soppalco con scala in legno","Bagno privato con doccia a pioggia","Pavimenti in rovere","Veranda e giardino privato con salottino","Wi-Fi · TV · AC · Minibar","Accappatoio, ciabatte, borsa SPA","Colazione inclusa"] : ["4 guests · 2 double beds","Ground floor + mezzanine with wooden staircase","Private bathroom with rain shower","Oak floors","Private veranda and garden with seating","Wi-Fi · TV · AC · Minibar","Bathrobe, slippers, SPA bag","Breakfast included"],
+      badge:"Superior · 4 posti", color:c.brown,
+    },
+    {
+      id:"abete", name:"Suite Abete", type:"superior",
+      photos:["https://res.cloudinary.com/dovpg47yh/image/upload/v1775509615/abete_mdsjxk.jpg","https://res.cloudinary.com/dovpg47yh/image/upload/v1775509616/abete_2_cfnfgn.jpg"],
+      photo:"https://res.cloudinary.com/dovpg47yh/image/upload/v1775509615/abete_mdsjxk.jpg",
+      desc: lang==="it" ? "L'abete richiama la calda atmosfera natalizia e la coesione familiare. Due letti matrimoniali su due livelli, bagno separato da eleganti vetri e travi in legno. Un nido di benessere e tranquillità." : "The fir tree evokes the warm Christmas atmosphere and family togetherness. Two double beds on two levels, bathroom separated by elegant glass and wooden beams. A nest of well-being and tranquillity.",
+      features: lang==="it" ? ["4 posti letto · 2 letti matrimoniali","Piano terra + soppalco con scala in legno","Bagno privato separato da vetro e travi legno","Doccia a pioggia · Pavimenti in rovere","Veranda e giardino privato con salottino","Wi-Fi · TV · AC · Minibar","Accappatoio, ciabatte, borsa SPA","Colazione inclusa"] : ["4 guests · 2 double beds","Ground floor + mezzanine with wooden staircase","Private bathroom with glass and wooden beam details","Rain shower · Oak floors","Private veranda and garden with seating","Wi-Fi · TV · AC · Minibar","Bathrobe, slippers, SPA bag","Breakfast included"],
+      badge:"Superior · 4 posti", color:c.brown,
     },
     {
       id:"leccio", name:"Suite Leccio", type:"superior",
@@ -641,6 +657,7 @@ function Suite({go,lang,setLang}) {
               </div>
             </div>
             {isOpen&&(<div style={{borderTop:`1px solid ${c.sand}`}}>
+              {room.photos&&room.photos[1]&&<img src={room.photos[1]} alt={room.name} style={{width:"100%",height:160,objectFit:"cover",display:"block"}}/>}
               <div style={{padding:"14px 18px 18px"}}>
                 <p style={{fontSize:13.5,lineHeight:1.75,color:c.muted,margin:"0 0 14px"}}>{room.desc}</p>
                 {room.features.map((f,i)=><div key={i} style={{display:"flex",gap:10,padding:"8px 0",borderBottom:i<room.features.length-1?`1px solid ${c.sand}`:"none",alignItems:"flex-start"}}><div style={{width:6,height:6,borderRadius:"50%",background:room.color,flexShrink:0,marginTop:6}}/><span style={{fontSize:13.5}}>{f}</span></div>)}

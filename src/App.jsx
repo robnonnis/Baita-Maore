@@ -377,7 +377,7 @@ const Ic = {
   pin: () => <svg viewBox="0 0 24 24" style={{width:26,height:26,stroke:c.dark,fill:"none",strokeWidth:1.3}}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>,
   hike: () => <svg viewBox="0 0 24 24" style={{width:26,height:26,stroke:c.dark,fill:"none",strokeWidth:1.3}}><circle cx="12" cy="4" r="2"/><path d="M10 8l-3 8 3-1 2 5 2-5 3 1-3-8"/><path d="M8 16l-2 5M16 16l2 5"/></svg>,
   fork: () => <svg viewBox="0 0 24 24" style={{width:26,height:26,stroke:c.dark,fill:"none",strokeWidth:1.3}}><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>,
-  building: () => <svg viewBox="0 0 24 24" style={{width:26,height:26,stroke:c.dark,fill:"none",strokeWidth:1.3}}><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>,
+  building: () => <svg viewBox="0 0 24 24" style={{width:26,height:26,stroke:c.dark,fill:"none",strokeWidth:1.3}}><path d="M2 4v16M2 8h18a2 2 0 012 2v10M2 14h20M7 14v2M2 8V4"/><rect x="5" y="9" width="6" height="4" rx="1"/></svg>,
   check: () => <svg viewBox="0 0 24 24" style={{width:26,height:26,stroke:c.dark,fill:"none",strokeWidth:1.3}}><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>,
   star: () => <svg viewBox="0 0 24 24" style={{width:26,height:26,stroke:c.dark,fill:"none",strokeWidth:1.3}}><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>,
   faq: () => <svg viewBox="0 0 24 24" style={{width:26,height:26,stroke:c.dark,fill:"none",strokeWidth:1.3}}><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17" strokeWidth="2" strokeLinecap="round"/></svg>,
@@ -703,7 +703,7 @@ function Suite({go,lang,setLang}) {
         );
       })}
 
-      <div style={{display:"flex",flexWrap:"wrap",gap:8,marginTop:8}}>{t.suiteTags.map((tag,i)=><span key={tag} style={i===0?s.tagA:s.tag}>{tag}</span>)}</div>
+
     </div>
   </div>;
 }

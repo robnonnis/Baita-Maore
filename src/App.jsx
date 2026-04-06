@@ -432,7 +432,7 @@ function ActivityCard({emoji,title,subtitle,detail,price,photos,photoPosition,t}
         </div>
       </div>
       {open&&(<div style={{borderTop:`1px solid ${c.sand}`}}>
-        {photos&&photos.length>0&&<div style={{display:"grid",gridTemplateColumns:photos.length===1?"1fr":"1fr 1fr",gap:2}}>{photos.map((src,i)=><img key={i} src={src} alt={title} style={{width:"100%",height:photos.length===1?200:140,objectFit:"cover",objectPosition:photoPosition||"center center",display:"block"}}/>)}</div>}
+        {photos&&photos.length>0&&<div style={{display:"grid",gridTemplateColumns:photos.length===1?"1fr":"1fr 1fr",gap:2}}>{photos.map((src,i)=><img key={i} src={src} alt={title} style={{width:"100%",height:"auto",display:"block",maxHeight:400}}/>)}</div>}
         <div style={{padding:"14px 16px 16px"}}>
           <p style={{fontSize:13.5,lineHeight:1.7,color:c.muted,margin:"0 0 12px"}}>{detail}</p>
           {price&&<div style={{display:"inline-flex",alignItems:"center",background:c.cream,borderRadius:10,padding:"6px 12px",marginBottom:12}}><span style={{fontFamily:"'Playfair Display',serif",fontSize:18,color:c.brown}}>{price}</span></div>}

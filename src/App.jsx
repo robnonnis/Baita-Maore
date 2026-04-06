@@ -568,45 +568,125 @@ function Checkin({go,lang,setLang}) {
 function Suite({go,lang,setLang}) {
   const t = TR[lang];
   const [open,setOpen] = useState(null);
-  const suites = [
-    { id:"superior", name:"Suite Superior", sub:"5 suite · Quercia · Abete · Pino · Leccio · Ulivo", rooms:["Quercia","Abete","Pino","Leccio","Ulivo"], desc:t.superiorDesc, features:t.superiorFeatures, photos:["https://res.cloudinary.com/dovpg47yh/image/upload/v1774646558/PHOTO-2024-08-18-13-43-30_a5snh6.jpg","https://res.cloudinary.com/dovpg47yh/image/upload/v1774646556/IMG_8980_exojb1.jpg","https://res.cloudinary.com/dovpg47yh/image/upload/v1774646553/PHOTO-2024-08-18-13-43-35_qvibn9.jpg"], color:c.brown },
-    { id:"luxury", name:"Luxury Suite", sub:"2 suite · Pioppo · Cedro · SPA privata", rooms:["Pioppo","Cedro"], desc:t.luxuryDesc, features:t.luxuryFeatures, photos:["https://res.cloudinary.com/dovpg47yh/image/upload/v1774646490/PHOTO-2024-08-18-13-44-56_3_nohuim.jpg","https://res.cloudinary.com/dovpg47yh/image/upload/v1774646549/IMG_8992_blfhiq.jpg","https://res.cloudinary.com/dovpg47yh/image/upload/v1774646488/IMG_9005_y9cjyy.jpg"], color:"#2d1a0e" },
+
+  const rooms = [
+    {
+      id:"pino", name:"Suite Pino", type:"superior",
+      photo:"https://res.cloudinary.com/dovpg47yh/image/upload/v1775508799/SuitePino1-1-1920x650_ovbpoz.jpg",
+      desc: lang==="it" ? "Immersa nel profumo del legno di pino, questa suite vi accoglierà con calore e naturalezza. Un rifugio autentico per ritrovare la serenità." : "Surrounded by the scent of pine wood, this suite welcomes you with warmth and authenticity. A genuine retreat to rediscover serenity.",
+      features: lang==="it" ? ["Letto matrimoniale","Bagno privato con doccia a pioggia","Pavimenti in rovere","Veranda privata con vista giardino","Wi-Fi gratuito · TV · Minibar","Colazione inclusa"] : ["Double bed","Private bathroom with rain shower","Oak floors","Private veranda with garden view","Free Wi-Fi · TV · Minibar","Breakfast included"],
+      badge:"Superior", color:c.brown,
+    },
+    {
+      id:"leccio", name:"Suite Leccio", type:"superior",
+      photo:"https://res.cloudinary.com/dovpg47yh/image/upload/v1775508799/SuiteLeccio1-1920x650_wbvo07.jpg",
+      desc: lang==="it" ? "Il leccio è l'albero simbolo della Sardegna. Questa suite ne richiama la solidità e il calore, in un ambiente raffinato e accogliente." : "The holm oak is the symbol of Sardinia. This suite reflects its solidity and warmth in a refined and welcoming environment.",
+      features: lang==="it" ? ["Letto matrimoniale","Bagno privato con doccia a pioggia","Pavimenti in rovere","Veranda privata con vista giardino","Wi-Fi gratuito · TV · Minibar","Colazione inclusa"] : ["Double bed","Private bathroom with rain shower","Oak floors","Private veranda with garden view","Free Wi-Fi · TV · Minibar","Breakfast included"],
+      badge:"Superior", color:c.brown,
+    },
+    {
+      id:"ulivo", name:"Suite Ulivo", type:"superior",
+      photo:"https://res.cloudinary.com/dovpg47yh/image/upload/v1775508800/SuiteUlivo1-1-1920x650_yqg7ky.jpg",
+      desc: lang==="it" ? "Come l'ulivo, simbolo di pace e longevità, questa suite offre un'atmosfera serena e senza tempo, perfetta per rigenerarsi." : "Like the olive tree, symbol of peace and longevity, this suite offers a serene and timeless atmosphere, perfect for rejuvenation.",
+      features: lang==="it" ? ["Letto matrimoniale","Bagno privato con doccia a pioggia","Pavimenti in rovere","Veranda privata con vista giardino","Wi-Fi gratuito · TV · Minibar","Colazione inclusa"] : ["Double bed","Private bathroom with rain shower","Oak floors","Private veranda with garden view","Free Wi-Fi · TV · Minibar","Breakfast included"],
+      badge:"Superior", color:c.brown,
+    },
+    {
+      id:"pioppo", name:"Luxury Suite Pioppo", type:"luxury",
+      photo:"https://res.cloudinary.com/dovpg47yh/image/upload/v1775508799/pioppo1-1920x650_abs8ao.jpg",
+      desc: lang==="it" ? "Situata nella nuova ala della Baita, questa esclusiva suite di 45 m² con legno di rovere pregiato offre momenti di intimo relax con SPA privata ad uso esclusivo." : "Located in the new wing of the Baita, this exclusive 45 sqm suite in fine oak wood offers moments of intimate relaxation with a private SPA for exclusive use.",
+      features: lang==="it" ? ["45 m² di privacy totale","SPA privata ad uso esclusivo","Jacuzzi · Sauna · Doccia cromoterapica","Letto matrimoniale · Camino","Veranda privata","Wi-Fi gratuito · TV · Minibar","Colazione inclusa"] : ["45 sqm of total privacy","Private SPA for exclusive use","Jacuzzi · Sauna · Chromotherapy shower","Double bed · Fireplace","Private veranda","Free Wi-Fi · TV · Minibar","Breakfast included"],
+      badge:"Luxury + SPA privata", color:"#2d1a0e",
+    },
+    {
+      id:"cedro", name:"Luxury Suite Cedro", type:"luxury",
+      photo:"https://res.cloudinary.com/dovpg47yh/image/upload/v1775508806/cedro1-1920x650_kn3mfy.png",
+      desc: lang==="it" ? "Pensata in ogni dettaglio per chi vuole viziarsi in un'oasi personale di pace. Il profumo del cedro e la SPA privata rendono il soggiorno indimenticabile." : "Designed in every detail for those who want to indulge in a personal oasis of peace. The scent of cedar and the private SPA make your stay unforgettable.",
+      features: lang==="it" ? ["45 m² di privacy totale","SPA privata ad uso esclusivo","Jacuzzi · Sauna · Doccia cromoterapica","Letto matrimoniale · Camino elettrico","Veranda privata","Wi-Fi gratuito · TV · Minibar","Colazione inclusa"] : ["45 sqm of total privacy","Private SPA for exclusive use","Jacuzzi · Sauna · Chromotherapy shower","Double bed · Electric fireplace","Private veranda","Free Wi-Fi · TV · Minibar","Breakfast included"],
+      badge:"Luxury + SPA privata", color:"#2d1a0e",
+    },
   ];
+
   return <div style={s.app}><FontLink/><LangToggle lang={lang} setLang={setLang}/>
-    <PageHead title={t.suiteTitle} sub={t.suiteSub} back={()=>go("home")} icon={<Ic.building/>}/>
+    <PageHead title={t.suiteTitle} sub={lang==="it"?"7 suite · Rifugi di legno e pietra":"7 suites · Wood and stone retreats"} back={()=>go("home")} icon={<Ic.building/>}/>
     <div style={s.content}>
-      {suites.map((suite)=>{
-        const isOpen=open===suite.id;
+
+      {/* Intro box */}
+      <div style={s.hlBox}>
+        <div style={s.hlTitle}>{lang==="it"?"Le nostre suite":"Our suites"}</div>
+        <p style={{fontSize:13.5,lineHeight:1.7,opacity:0.92,margin:0}}>{lang==="it"?"7 suite di lusso ispirate alla natura, ognuna con il suo carattere unico. Ogni dettaglio è pensato per farvi sentire a casa, immersi nella bellezza dei boschi di Laconi.":"7 luxury suites inspired by nature, each with its own unique character. Every detail is designed to make you feel at home, surrounded by the beauty of Laconi's woods."}</p>
+      </div>
+
+      {/* Superior label */}
+      <div style={{fontSize:9,letterSpacing:"3px",textTransform:"uppercase",color:c.muted,textAlign:"center",margin:"8px 0 12px"}}>Superior Suites</div>
+
+      {rooms.filter(r=>r.type==="superior").map((room)=>{
+        const isOpen=open===room.id;
         return (
-          <div key={suite.id} style={{marginBottom:14,borderRadius:20,overflow:"hidden",border:`1.5px solid ${isOpen?suite.color:c.sand}`,background:c.white}}>
-            <div onClick={()=>setOpen(isOpen?null:suite.id)} style={{cursor:"pointer"}}>
-              <div style={{position:"relative",height:180,overflow:"hidden"}}>
-                <img src={suite.photos[0]} alt={suite.name} style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}}/>
-                <div style={{position:"absolute",inset:0,background:"linear-gradient(to top,rgba(28,18,8,0.75) 0%,rgba(28,18,8,0) 50%)"}}/>
-                <div style={{position:"absolute",bottom:12,left:14,display:"flex",flexWrap:"wrap",gap:5}}>
-                  {suite.rooms.map(r=><span key={r} style={{background:"rgba(255,255,255,0.18)",backdropFilter:"blur(6px)",borderRadius:20,padding:"3px 10px",fontSize:10,letterSpacing:"1.5px",textTransform:"uppercase",color:"white",border:"1px solid rgba(255,255,255,0.3)"}}>{r}</span>)}
+          <div key={room.id} style={{marginBottom:12,borderRadius:20,overflow:"hidden",border:`1.5px solid ${isOpen?room.color:c.sand}`,background:c.white}}>
+            <div onClick={()=>setOpen(isOpen?null:room.id)} style={{cursor:"pointer"}}>
+              <div style={{position:"relative",height:170,overflow:"hidden"}}>
+                <img src={room.photo} alt={room.name} style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}}/>
+                <div style={{position:"absolute",inset:0,background:"linear-gradient(to top,rgba(28,18,8,0.7) 0%,rgba(28,18,8,0) 50%)"}}/>
+                <div style={{position:"absolute",bottom:10,left:14}}>
+                  <span style={{background:"rgba(255,255,255,0.2)",backdropFilter:"blur(6px)",borderRadius:20,padding:"3px 12px",fontSize:10,letterSpacing:"1.5px",textTransform:"uppercase",color:"white",border:"1px solid rgba(255,255,255,0.3)"}}>{room.badge}</span>
                 </div>
-                <div style={{position:"absolute",top:12,right:12,width:30,height:30,borderRadius:"50%",background:"rgba(255,255,255,0.2)",backdropFilter:"blur(6px)",display:"flex",alignItems:"center",justifyContent:"center"}}>
-                  <svg viewBox="0 0 24 24" style={{width:14,height:14,stroke:"white",fill:"none",strokeWidth:2.5,transform:isOpen?"rotate(180deg)":"none"}}><polyline points="6 9 12 15 18 9"/></svg>
+                <div style={{position:"absolute",top:12,right:12,width:28,height:28,borderRadius:"50%",background:"rgba(255,255,255,0.2)",backdropFilter:"blur(6px)",display:"flex",alignItems:"center",justifyContent:"center"}}>
+                  <svg viewBox="0 0 24 24" style={{width:13,height:13,stroke:"white",fill:"none",strokeWidth:2.5,transform:isOpen?"rotate(180deg)":"none"}}><polyline points="6 9 12 15 18 9"/></svg>
                 </div>
               </div>
-              <div style={{padding:"14px 16px 12px",display:"flex",alignItems:"center",justifyContent:"space-between"}}>
-                <div><div style={{fontFamily:"'Playfair Display',serif",fontSize:22,color:c.dark}}>{suite.name}</div><div style={{fontSize:11,color:c.muted,marginTop:2}}>{suite.sub}</div></div>
-                <span style={{fontSize:11,color:c.brown,fontWeight:600,letterSpacing:"1px",textTransform:"uppercase"}}>{isOpen?t.suiteCloseBtn:t.suiteOpenBtn}</span>
+              <div style={{padding:"12px 16px 10px",display:"flex",alignItems:"center",justifyContent:"space-between"}}>
+                <div><div style={{fontFamily:"'Playfair Display',serif",fontSize:20,color:c.dark}}>{room.name}</div></div>
+                <span style={{fontSize:10,color:room.color,fontWeight:600,letterSpacing:"1px",textTransform:"uppercase"}}>{isOpen?(lang==="it"?"Chiudi":"Close"):(lang==="it"?"Scopri":"Discover")}</span>
               </div>
             </div>
             {isOpen&&(<div style={{borderTop:`1px solid ${c.sand}`}}>
-              {suite.photos.length>1&&<div style={{display:"grid",gridTemplateColumns:suite.photos.length===2?"1fr":"1fr 1fr",gap:2}}>{suite.photos.slice(1).map((p,i)=><img key={i} src={p} alt={suite.name} style={{width:"100%",height:160,objectFit:"cover",display:"block"}}/>)}</div>}
-              <div style={{padding:"16px 18px 20px"}}>
-                <p style={{fontSize:13.5,lineHeight:1.75,color:c.muted,margin:"0 0 16px"}}>{suite.desc}</p>
-                {suite.features.map((f,i)=><div key={i} style={{display:"flex",gap:10,padding:"9px 0",borderBottom:i<suite.features.length-1?`1px solid ${c.sand}`:"none",alignItems:"flex-start"}}><div style={{width:6,height:6,borderRadius:"50%",background:suite.color,flexShrink:0,marginTop:6}}/><span style={{fontSize:13.5}}>{f}</span></div>)}
-                <a href="mailto:info@baitamaore.it?subject=Suite+Info" style={{display:"flex",alignItems:"center",gap:8,background:suite.color,color:"white",borderRadius:12,padding:"12px 16px",textDecoration:"none",fontSize:13,marginTop:16,justifyContent:"center"}}><Ic.mailW/> {t.suiteEmailBtn}</a>
+              <div style={{padding:"14px 18px 18px"}}>
+                <p style={{fontSize:13.5,lineHeight:1.75,color:c.muted,margin:"0 0 14px"}}>{room.desc}</p>
+                {room.features.map((f,i)=><div key={i} style={{display:"flex",gap:10,padding:"8px 0",borderBottom:i<room.features.length-1?`1px solid ${c.sand}`:"none",alignItems:"flex-start"}}><div style={{width:6,height:6,borderRadius:"50%",background:room.color,flexShrink:0,marginTop:6}}/><span style={{fontSize:13.5}}>{f}</span></div>)}
+                <a href="https://baitamaore.it/disponibilita-camere/" target="_blank" rel="noreferrer" style={{display:"flex",alignItems:"center",gap:8,background:room.color,color:"white",borderRadius:12,padding:"12px 16px",textDecoration:"none",fontSize:13,marginTop:16,justifyContent:"center"}}>{lang==="it"?"🗓️ Verifica disponibilità":"🗓️ Check availability"}</a>
               </div>
             </div>)}
           </div>
         );
       })}
-      <div style={{display:"flex",flexWrap:"wrap",gap:8,marginTop:4}}>{t.suiteTags.map((tag,i)=><span key={tag} style={i===0?s.tagA:s.tag}>{tag}</span>)}</div>
+
+      {/* Luxury label */}
+      <div style={{fontSize:9,letterSpacing:"3px",textTransform:"uppercase",color:c.muted,textAlign:"center",margin:"16px 0 12px"}}>Luxury Suites</div>
+
+      {rooms.filter(r=>r.type==="luxury").map((room)=>{
+        const isOpen=open===room.id;
+        return (
+          <div key={room.id} style={{marginBottom:12,borderRadius:20,overflow:"hidden",border:`1.5px solid ${isOpen?room.color:c.sand}`,background:c.white}}>
+            <div onClick={()=>setOpen(isOpen?null:room.id)} style={{cursor:"pointer"}}>
+              <div style={{position:"relative",height:170,overflow:"hidden"}}>
+                <img src={room.photo} alt={room.name} style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}}/>
+                <div style={{position:"absolute",inset:0,background:"linear-gradient(to top,rgba(28,18,8,0.7) 0%,rgba(28,18,8,0) 50%)"}}/>
+                <div style={{position:"absolute",bottom:10,left:14,display:"flex",gap:6}}>
+                  <span style={{background:"rgba(107,66,38,0.85)",backdropFilter:"blur(6px)",borderRadius:20,padding:"3px 12px",fontSize:10,letterSpacing:"1.5px",textTransform:"uppercase",color:"white"}}>Luxury</span>
+                  <span style={{background:"rgba(255,255,255,0.2)",backdropFilter:"blur(6px)",borderRadius:20,padding:"3px 12px",fontSize:10,letterSpacing:"1px",color:"white",border:"1px solid rgba(255,255,255,0.3)"}}>💎 SPA privata</span>
+                </div>
+                <div style={{position:"absolute",top:12,right:12,width:28,height:28,borderRadius:"50%",background:"rgba(255,255,255,0.2)",backdropFilter:"blur(6px)",display:"flex",alignItems:"center",justifyContent:"center"}}>
+                  <svg viewBox="0 0 24 24" style={{width:13,height:13,stroke:"white",fill:"none",strokeWidth:2.5,transform:isOpen?"rotate(180deg)":"none"}}><polyline points="6 9 12 15 18 9"/></svg>
+                </div>
+              </div>
+              <div style={{padding:"12px 16px 10px",display:"flex",alignItems:"center",justifyContent:"space-between"}}>
+                <div><div style={{fontFamily:"'Playfair Display',serif",fontSize:20,color:c.dark}}>{room.name}</div></div>
+                <span style={{fontSize:10,color:room.color,fontWeight:600,letterSpacing:"1px",textTransform:"uppercase"}}>{isOpen?(lang==="it"?"Chiudi":"Close"):(lang==="it"?"Scopri":"Discover")}</span>
+              </div>
+            </div>
+            {isOpen&&(<div style={{borderTop:`1px solid ${c.sand}`}}>
+              <div style={{padding:"14px 18px 18px"}}>
+                <p style={{fontSize:13.5,lineHeight:1.75,color:c.muted,margin:"0 0 14px"}}>{room.desc}</p>
+                {room.features.map((f,i)=><div key={i} style={{display:"flex",gap:10,padding:"8px 0",borderBottom:i<room.features.length-1?`1px solid ${c.sand}`:"none",alignItems:"flex-start"}}><div style={{width:6,height:6,borderRadius:"50%",background:room.color,flexShrink:0,marginTop:6}}/><span style={{fontSize:13.5}}>{f}</span></div>)}
+                <a href="https://baitamaore.it/disponibilita-camere/" target="_blank" rel="noreferrer" style={{display:"flex",alignItems:"center",gap:8,background:room.color,color:"white",borderRadius:12,padding:"12px 16px",textDecoration:"none",fontSize:13,marginTop:16,justifyContent:"center"}}>{lang==="it"?"🗓️ Verifica disponibilità":"🗓️ Check availability"}</a>
+              </div>
+            </div>)}
+          </div>
+        );
+      })}
+
+      <div style={{display:"flex",flexWrap:"wrap",gap:8,marginTop:8}}>{t.suiteTags.map((tag,i)=><span key={tag} style={i===0?s.tagA:s.tag}>{tag}</span>)}</div>
     </div>
   </div>;
 }

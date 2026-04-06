@@ -417,7 +417,7 @@ function PageHead({title,sub,back,icon}) {
 function Arrow() { return <svg viewBox="0 0 24 24" style={{width:14,height:14,stroke:c.brown,fill:"none",strokeWidth:2,flexShrink:0}}><polyline points="9 18 15 12 9 6"/></svg>; }
 
 // ─── ACTIVITY CARD ───────────────────────────────────────────────
-function ActivityCard({emoji,title,subtitle,detail,price,photos,t}) {
+function ActivityCard({emoji,title,subtitle,detail,price,photos,photoPosition,t}) {
   const [open,setOpen] = useState(false);
   return (
     <div onClick={()=>setOpen(o=>!o)} style={{background:c.white,borderRadius:16,border:`1.5px solid ${open?c.brown:c.sand}`,overflow:"hidden",marginBottom:10,cursor:"pointer"}}>

@@ -471,12 +471,12 @@ function PH({go,lang,setLang}) {
   return (
     <div style={s.app}><FontLink/><LangToggle lang={lang} setLang={setLang}/>
       <div style={{...s.hero, background:"#1c1208", position:"relative", overflow:"hidden"}}>
-        <img src="https://res.cloudinary.com/dovpg47yh/image/upload/v1775488683/PHOTO-2026-03-29-20-52-16_1_ote8bb.jpg" alt="Baita Maore" style={{position:"absolute",top:0,left:0,width:"100%",height:"100%",objectFit:"cover",display:"block",opacity:0.55}}/>
-        <div style={{position:"absolute",inset:0,background:"linear-gradient(to bottom, rgba(28,18,8,0.3) 0%, rgba(28,18,8,0.75) 100%)"}}/>
+        <img src="https://res.cloudinary.com/dovpg47yh/image/upload/v1775488683/PHOTO-2026-03-29-20-52-16_1_ote8bb.jpg" alt="Baita Maore" style={{position:"absolute",top:0,left:0,width:"100%",height:"100%",objectFit:"cover",display:"block",opacity:0.7}}/>
+        <div style={{position:"absolute",inset:0,background:"linear-gradient(to bottom, rgba(10,5,2,0.45) 0%, rgba(10,5,2,0.8) 100%)"}}/>
         <div style={{position:"relative",padding:"50px 24px 36px",textAlign:"center"}}>
           <div style={s.eyebrow}>Laconi · Oristano · Sardegna</div>
-          <img src="https://res.cloudinary.com/dovpg47yh/image/upload/v1774558967/IMG_8927_t7ppwk.png" alt="Baita Maore" style={{width:200,maxWidth:"65vw",display:"block",margin:"8px auto 12px",height:"auto"}}/>
-          <div style={{fontSize:10,letterSpacing:"3px",textTransform:"uppercase",color:"rgba(244,237,224,0.7)",marginTop:10,fontFamily:"'Raleway',sans-serif",fontWeight:200}}>{t.heroSub}</div>
+          <img src="https://res.cloudinary.com/dovpg47yh/image/upload/v1774558967/IMG_8927_t7ppwk.png" alt="Baita Maore" style={{width:210,maxWidth:"65vw",display:"block",margin:"8px auto 14px",height:"auto",filter:"brightness(0) invert(1)",opacity:0.95}}/>
+          <div style={{fontSize:10,letterSpacing:"3px",textTransform:"uppercase",color:"rgba(244,237,224,0.75)",marginTop:4,fontFamily:"'Raleway',sans-serif",fontWeight:300}}>{t.heroSub}</div>
           <div style={{width:32,height:1,background:c.brownL,margin:"12px auto 0"}}/>
         </div>
       </div>
@@ -643,7 +643,7 @@ function Piscina({go,lang,setLang}) {
     <PageHead title={t.piscinaTitle} sub={t.piscinaSub} back={()=>go("home")} icon={<Ic.pool/>}/>
     <div style={s.content}>
       <div style={{borderRadius:18,overflow:"hidden",marginBottom:12}}>
-        <img src="https://res.cloudinary.com/dovpg47yh/image/upload/v1774646455/IMG_9071_zkimuv.jpg" alt="Piscina Baita Maore" style={{width:"100%",height:220,objectFit:"cover",display:"block"}}/>
+        <img src="https://res.cloudinary.com/dovpg47yh/image/upload/v1775488680/PHOTO-2026-03-29-20-52-14_1_vfqfu9.jpg" alt="Piscina Baita Maore" style={{width:"100%",height:220,objectFit:"cover",display:"block"}}/>
       </div>
       <div style={s.hlBox}><div style={s.hlTitle}>{t.piscinaHL}</div><p style={{fontSize:14,lineHeight:1.7,opacity:0.92,margin:0}}>{t.piscinaHLText}</p></div>
       <Card><CT text={t.estateLabel}/>{t.estateItems.map((x,i)=><Rule key={i} t={x} last={i===t.estateItems.length-1}/>)}</Card>

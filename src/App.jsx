@@ -930,17 +930,113 @@ function Mangiare({go,lang,setLang}) {
 
 function Recensioni({go,lang,setLang}) {
   const t = TR[lang];
+  const [cur, setCur] = useState(0);
+
+  const quotes = lang==="it" ? [
+    { text: "Baita Maore è un sogno ad occhi aperti: posizione suggestiva, esperienza autentica e un'accoglienza impeccabile da parte di tutto il personale.", author: "Ospite verificato", platform: "Booking.com", stars: 5 },
+    { text: "Struttura meravigliosa curata nei minimi dettagli. Suite Pioppo con SPA privata: un vero sogno. Cena con chef che non ha niente da invidiare a ristoranti stellati.", author: "Ospite verificato", platform: "Booking.com", stars: 5 },
+    { text: "Week end da favola. Suite, SPA e piscina veramente oltre le aspettative. La baita è semplicemente fantastica: il lusso sottile della raffinata semplicità.", author: "Ospite verificato", platform: "Google", stars: 5 },
+    { text: "Abbiamo alloggiato nella suite Quercia in quattro. Location stupenda, servizio perfetto, personale gentilissimo. Un ringraziamento speciale a Riccardo.", author: "Maria F.P.", platform: "Booking.com", stars: 5 },
+    { text: "La cucina è ottima, i paesaggi da favola, SPA e piscina una carezza. Gli ambienti in stile nordico sono molto suggestivi. Torneremo sicuramente!", author: "Ospite verificato", platform: "Booking.com", stars: 5 },
+    { text: "Piacevolmente accolti in un clima familiare e ricercato. Piscina riscaldata senza limiti di orario, per bagni di stelle e bagni d'alba. Un'esperienza unica.", author: "Ospite verificato", platform: "Booking.com", stars: 5 },
+  ] : [
+    { text: "Baita Maore is an enchanting gem in the middle of the island. The attention to detail and elegance is truly beautiful. What stands out most is the incredible kindness of the staff.", author: "Verified guest", platform: "Booking.com", stars: 5 },
+    { text: "A dream come true: stunning location, authentic local experience and impeccable service from all the staff. Absolutely a dream to live!", author: "Verified guest", platform: "Booking.com", stars: 5 },
+    { text: "Wonderful weekend. Suites, SPA and pool truly beyond expectations. Simply fantastic: the subtle luxury of refined simplicity.", author: "Verified guest", platform: "Google", stars: 5 },
+    { text: "We stayed in the Quercia suite, a group of four. Stunning location, perfect service and very attentive staff. A special thanks to Riccardo.", author: "Maria F.P.", platform: "Booking.com", stars: 5 },
+    { text: "The cuisine is excellent, the landscapes breathtaking, SPA and pool a treat. The Nordic-style interiors are very evocative. We will definitely return!", author: "Verified guest", platform: "Booking.com", stars: 5 },
+  ];
+
+  useEffect(()=>{
+    const id = setInterval(()=>setCur(c=>(c+1)%quotes.length), 4000);
+    return ()=>clearInterval(id);
+  },[]);
+
+  const Stars = ({n})=><div style={{display:"flex",gap:2,marginBottom:8}}>{[...Array(n)].map((_,i)=><svg key={i} viewBox="0 0 24 24" style={{width:14,height:14,fill:"#f59e0b",stroke:"none"}}><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>)}</div>;
+
   return <div style={s.app}><FontLink/><LangToggle lang={lang} setLang={setLang}/>
     <PageHead title={t.recensioniTitle} back={()=>go("home")} icon={<Ic.star/>}/>
     <div style={s.content}>
-      <div style={s.hlBox}><div style={s.hlTitle}>{t.recensioniHL}</div><p style={{fontSize:14,lineHeight:1.7,opacity:0.92,margin:0}}>{t.recensioniText}</p></div>
-      <Card style={{textAlign:"center",padding:"28px 18px"}}>
-        <div style={{fontSize:40,marginBottom:10}}>⭐⭐⭐⭐⭐</div>
-        <p style={{fontFamily:"'Playfair Display',serif",fontSize:20,marginBottom:8}}>{t.starsLabel}</p>
-        <p style={{fontSize:13,color:c.muted,marginBottom:20,lineHeight:1.6}}>{t.starsThanks.split("\n").map((l,i)=><span key={i}>{l}{i===0&&<br/>}</span>)}</p>
-        <a href="https://www.google.com/search?sca_esv=3d469d807f837c81&q=Baita+Maore&si=AL3DRZGNtcdgKOqVhotcr-UG2kkYpwR2WO4qu3O00NmpwBmLnelENfgjuP228Sq9Mu0JKBy_z4FZlQPBJQf0ePnqhto70ecszcuDObBbwo6mQQpuIptZpQ0%3D&sa=X&ved=2ahUKEwjp1p-H28WTAxUMgf0HHezMIY4Q_coHegQIMBAB" target="_blank" rel="noreferrer" style={s.mapBtn}>{t.starsBtn}</a>
-      </Card>
-      <Card><CT text={lang==="it"?"Cosa ci ha colpito di più?":"What impressed us most?"}/>{t.starsItems.map((x,i)=><Rule key={i} t={x} last={i===t.starsItems.length-1}/>)}</Card>
+
+      {/* Rating box */}
+      <div style={{background:c.dark,borderRadius:18,padding:"22px 18px",marginBottom:12,display:"flex",alignItems:"center",gap:16}}>
+        <div style={{textAlign:"center",flexShrink:0}}>
+          <div style={{fontFamily:"'Playfair Display',serif",fontSize:44,color:"white",lineHeight:1}}>4.7</div>
+          <div style={{display:"flex",gap:2,justifyContent:"center",margin:"6px 0 4px"}}>{[...Array(5)].map((_,i)=><svg key={i} viewBox="0 0 24 24" style={{width:12,height:12,fill:i<5?"#f59e0b":"rgba(255,255,255,0.2)",stroke:"none"}}><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>)}</div>
+          <div style={{fontSize:10,color:"rgba(244,237,224,0.5)",letterSpacing:"1px"}}>304 Google</div>
+        </div>
+        <div style={{width:1,height:60,background:"rgba(255,255,255,0.1)",flexShrink:0}}/>
+        <div style={{textAlign:"center",flexShrink:0}}>
+          <div style={{fontFamily:"'Playfair Display',serif",fontSize:44,color:"white",lineHeight:1}}>9.3</div>
+          <div style={{fontSize:11,color:"#f59e0b",fontWeight:600,margin:"6px 0 4px"}}>Eccellente</div>
+          <div style={{fontSize:10,color:"rgba(244,237,224,0.5)",letterSpacing:"1px"}}>241 Booking</div>
+        </div>
+        <div style={{flex:1,textAlign:"right"}}>
+          <div style={{fontSize:11,color:"rgba(244,237,224,0.6)",lineHeight:1.6}}>{lang==="it"?"Valutazioni verificate\nda ospiti reali":"Verified ratings\nfrom real guests"}</div>
+        </div>
+      </div>
+
+      {/* Quote carousel */}
+      <div style={{background:c.white,borderRadius:18,padding:"22px 18px",marginBottom:12,border:`1px solid ${c.sand}`,minHeight:160,position:"relative"}}>
+        <div style={{fontSize:36,color:c.sand,fontFamily:"Georgia,serif",lineHeight:1,marginBottom:8}}>"</div>
+        <Stars n={quotes[cur].stars}/>
+        <p style={{fontFamily:"'Playfair Display',serif",fontSize:15,lineHeight:1.7,color:c.dark,margin:"0 0 14px",fontStyle:"italic"}}>
+          {quotes[cur].text}
+        </p>
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}>
+          <div>
+            <div style={{fontSize:12,fontWeight:600,color:c.dark}}>{quotes[cur].author}</div>
+            <div style={{fontSize:11,color:c.muted}}>{quotes[cur].platform}</div>
+          </div>
+          <div style={{display:"flex",gap:6}}>
+            {quotes.map((_,i)=>(
+              <div key={i} onClick={()=>setCur(i)} style={{width:i===cur?18:6,height:6,borderRadius:3,background:i===cur?c.brown:c.sand,transition:"all 0.3s",cursor:"pointer"}}/>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Platform buttons */}
+      <div style={{fontSize:9,letterSpacing:"3px",textTransform:"uppercase",color:c.muted,textAlign:"center",margin:"16px 0 12px"}}>{lang==="it"?"Lascia la tua recensione":"Leave your review"}</div>
+
+      <a href="https://www.google.com/search?sca_esv=3d469d807f837c81&q=Baita+Maore&si=AL3DRZGNtcdgKOqVhotcr-UG2kkYpwR2WO4qu3O00NmpwBmLnelENfgjuP228Sq9Mu0JKBy_z4FZlQPBJQf0ePnqhto70ecszcuDObBbwo6mQQpuIptZpQ0%3D&sa=X&ved=2ahUKEwjp1p-H28WTAxUMgf0HHezMIY4Q_coHegQIMBAB" target="_blank" rel="noreferrer"
+        style={{display:"flex",alignItems:"center",gap:14,background:c.white,borderRadius:16,padding:"14px 16px",textDecoration:"none",border:`1.5px solid ${c.sand}`,marginBottom:10}}>
+        <div style={{width:38,height:38,borderRadius:10,background:"#fff",border:`1px solid ${c.sand}`,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}>
+          <svg viewBox="0 0 24 24" style={{width:22,height:22}}><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+        </div>
+        <div style={{flex:1}}>
+          <div style={{fontSize:14,fontWeight:500,color:c.dark}}>Google</div>
+          <div style={{display:"flex",alignItems:"center",gap:4,marginTop:2}}>
+            <div style={{display:"flex",gap:1}}>{[...Array(5)].map((_,i)=><svg key={i} viewBox="0 0 24 24" style={{width:11,height:11,fill:"#f59e0b",stroke:"none"}}><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>)}</div>
+            <span style={{fontSize:11,color:c.muted}}>4.7 · 304 {lang==="it"?"recensioni":"reviews"}</span>
+          </div>
+        </div>
+        <svg viewBox="0 0 24 24" style={{width:14,height:14,stroke:c.muted,fill:"none",strokeWidth:2}}><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+
+      <a href="https://www.booking.com/hotel/it/baita-maore.it.html" target="_blank" rel="noreferrer"
+        style={{display:"flex",alignItems:"center",gap:14,background:c.white,borderRadius:16,padding:"14px 16px",textDecoration:"none",border:`1.5px solid ${c.sand}`,marginBottom:10}}>
+        <div style={{width:38,height:38,borderRadius:10,background:"#003580",display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}>
+          <span style={{color:"white",fontWeight:700,fontSize:13}}>B.</span>
+        </div>
+        <div style={{flex:1}}>
+          <div style={{fontSize:14,fontWeight:500,color:c.dark}}>Booking.com</div>
+          <div style={{display:"flex",alignItems:"center",gap:4,marginTop:2}}>
+            <span style={{background:"#003580",color:"white",borderRadius:6,padding:"1px 6px",fontSize:11,fontWeight:700}}>9.3</span>
+            <span style={{fontSize:11,color:c.muted}}>241 {lang==="it"?"recensioni":"reviews"}</span>
+          </div>
+        </div>
+        <svg viewBox="0 0 24 24" style={{width:14,height:14,stroke:c.muted,fill:"none",strokeWidth:2}}><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+
+      <div style={{...s.darkBox,textAlign:"center",marginTop:4}}>
+        <p style={{fontSize:13,color:"rgba(244,237,224,0.75)",lineHeight:1.7,margin:"0 0 12px"}}>{lang==="it"?"La tua recensione aiuta altri viaggiatori a scoprire la Baita Maore. Bastano 2 minuti! 🙏":"Your review helps other travellers discover Baita Maore. It only takes 2 minutes! 🙏"}</p>
+        <a href="https://www.google.com/search?sca_esv=3d469d807f837c81&q=Baita+Maore&si=AL3DRZGNtcdgKOqVhotcr-UG2kkYpwR2WO4qu3O00NmpwBmLnelENfgjuP228Sq9Mu0JKBy_z4FZlQPBJQf0ePnqhto70ecszcuDObBbwo6mQQpuIptZpQ0%3D&sa=X&ved=2ahUKEwjp1p-H28WTAxUMgf0HHezMIY4Q_coHegQIMBAB" target="_blank" rel="noreferrer"
+          style={{display:"inline-flex",alignItems:"center",gap:8,background:c.brown,color:"white",borderRadius:12,padding:"11px 20px",textDecoration:"none",fontSize:13}}>
+          ⭐ {lang==="it"?"Scrivi una recensione":"Write a review"}
+        </a>
+      </div>
+
     </div>
   </div>;
 }

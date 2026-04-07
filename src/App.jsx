@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const FontLink = () => (
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Raleway:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
@@ -464,6 +464,61 @@ function TreatmentCard({emoji,name,price,duration,desc}) {
 }
 
 // ─── SCREENS ─────────────────────────────────────────────────────
+function Carousel({t}) {
+  const slides = [
+    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/v1774646565/baita_snow_g7gh1o.jpg", emoji:"❄️", label:t.winter, sub:t.winterSub },
+    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/v1774646454/7C58746E-2898-455F-8F54-DFBECF932A68_L0_001-1_7_2023_14_44_36_itcw6x.jpg", emoji:"☀️", label:t.summer, sub:t.summerSub },
+    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/v1774646480/IMG_9019_gvalgq.jpg" },
+    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/v1774646481/IMG_9017_wuwrak.jpg" },
+    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/v1774646483/IMG_9013_hnsfax.jpg" },
+    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/v1774646476/IMG_9025_bxjmb7.jpg" },
+    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/v1774646471/colazione_cd8rou.jpg" },
+    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/v1774646464/PHOTO-2024-08-18-13-46-25_2_etievo.jpg" },
+    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/v1774646459/IMG_4181_r3rnxr.jpg" },
+    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/v1774646466/PHOTO-2024-08-18-13-54-50_6_gchmgn.jpg" },
+    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/v1774646488/IMG_9005_y9cjyy.jpg" },
+    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/v1774646549/IMG_8990_dgzgpp.jpg" },
+    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/v1775488680/PHOTO-2026-03-29-20-52-17_7_nbxiis.jpg" },
+    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/v1775488681/PHOTO-2026-03-29-20-52-16_11_e2voao.jpg" },
+    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/v1775488681/PHOTO-2026-03-29-20-52-17_2_pvphkk.jpg" },
+  ];
+  const [cur, setCur] = useState(0);
+  const [startX, setStartX] = useState(0);
+  useEffect(()=>{ const id=setInterval(()=>setCur(c=>(c+1)%slides.length),3500); return ()=>clearInterval(id); },[]);
+  const prev = ()=>setCur(c=>(c-1+slides.length)%slides.length);
+  const next = ()=>setCur(c=>(c+1)%slides.length);
+  const onTouchStart = e=>setStartX(e.touches[0].clientX);
+  const onTouchEnd = e=>{ const dx=e.changedTouches[0].clientX-startX; if(dx<-40) next(); else if(dx>40) prev(); };
+  const slide = slides[cur];
+  return (
+    <div style={{padding:"8px 20px 0"}}>
+      <div style={{fontSize:9,letterSpacing:"4px",textTransform:"uppercase",color:c.muted,textAlign:"center",marginBottom:14}}>{t.seasonLabel}</div>
+      <div style={{borderRadius:18,overflow:"hidden",position:"relative",height:220,userSelect:"none"}} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
+        <img key={cur} src={slide.src} alt="Baita Maore" style={{width:"100%",height:"100%",objectFit:"cover",display:"block",transition:"opacity 0.4s"}}/>
+        <div style={{position:"absolute",inset:0,background:"linear-gradient(to top,rgba(28,18,8,0.75) 0%,rgba(28,18,8,0.05) 55%)"}}/>
+        {slide.label&&(
+          <div style={{position:"absolute",bottom:0,left:0,right:0,padding:"0 16px 16px"}}>
+            <div style={{fontSize:26,marginBottom:4}}>{slide.emoji}</div>
+            <div style={{fontFamily:"'Playfair Display',serif",fontSize:18,color:"white",lineHeight:1.2}}>{slide.label.split("\n").map((l,i)=><span key={i}>{l}{i===0&&<br/>}</span>)}</div>
+            <div style={{fontSize:10,color:"rgba(255,255,255,0.65)",marginTop:4}}>{slide.sub}</div>
+          </div>
+        )}
+        <button onClick={prev} style={{position:"absolute",left:10,top:"50%",transform:"translateY(-50%)",background:"rgba(255,255,255,0.2)",backdropFilter:"blur(6px)",border:"none",borderRadius:"50%",width:32,height:32,display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer"}}>
+          <svg viewBox="0 0 24 24" style={{width:14,height:14,stroke:"white",fill:"none",strokeWidth:2.5}}><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button onClick={next} style={{position:"absolute",right:10,top:"50%",transform:"translateY(-50%)",background:"rgba(255,255,255,0.2)",backdropFilter:"blur(6px)",border:"none",borderRadius:"50%",width:32,height:32,display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer"}}>
+          <svg viewBox="0 0 24 24" style={{width:14,height:14,stroke:"white",fill:"none",strokeWidth:2.5}}><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <div style={{position:"absolute",bottom:12,right:14,display:"flex",gap:5}}>
+          {slides.map((_,i)=>(
+            <div key={i} onClick={()=>setCur(i)} style={{width:i===cur?18:6,height:6,borderRadius:3,background:i===cur?"white":"rgba(255,255,255,0.4)",transition:"all 0.3s",cursor:"pointer"}}/>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function PH({go,lang,setLang}) {
   const t = TR[lang];
   const icons = [<Ic.home/>,<Ic.lock/>,<Ic.building/>,<Ic.spa/>,<Ic.pool/>,<Ic.check/>,<Ic.pin/>,<Ic.hike/>,<Ic.fork/>,<Ic.star/>,<Ic.social/>,<Ic.faq/>];
@@ -487,30 +542,9 @@ function PH({go,lang,setLang}) {
           <p style={{fontSize:13,color:"rgba(244,237,224,0.65)",lineHeight:1.7,margin:0}}>{t.openYear} {t.openYearSub}</p>
         </div>
       </div>
-      <div style={{padding:"8px 20px 0"}}>
-        <div style={{fontSize:9,letterSpacing:"4px",textTransform:"uppercase",color:c.muted,textAlign:"center",marginBottom:14}}>{t.seasonLabel}</div>
-        <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:10}}>
-          <div style={{borderRadius:18,overflow:"hidden",position:"relative",height:160}}>
-            <img src="https://res.cloudinary.com/dovpg47yh/image/upload/v1774646565/baita_snow_g7gh1o.jpg" alt="winter" style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}}/>
-            <div style={{position:"absolute",inset:0,background:"linear-gradient(to top,rgba(28,18,8,0.85) 0%,rgba(28,18,8,0.1) 60%)"}}/>
-            <div style={{position:"absolute",bottom:0,left:0,right:0,padding:16}}>
-              <div style={{fontSize:24,marginBottom:4}}>❄️</div>
-              <div style={{fontFamily:"'Playfair Display',serif",fontSize:16,color:"white",lineHeight:1.2}}>{t.winter.split("\n").map((l,i)=><span key={i}>{l}{i===0&&<br/>}</span>)}</div>
-              <div style={{fontSize:10,color:"rgba(255,255,255,0.6)",marginTop:4}}>{t.winterSub}</div>
-            </div>
-          </div>
-          <div style={{borderRadius:18,overflow:"hidden",position:"relative",height:160}}>
-            <img src="https://res.cloudinary.com/dovpg47yh/image/upload/v1774646454/7C58746E-2898-455F-8F54-DFBECF932A68_L0_001-1_7_2023_14_44_36_itcw6x.jpg" alt="summer" style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}}/>
-            <div style={{position:"absolute",inset:0,background:"linear-gradient(to top,rgba(28,18,8,0.85) 0%,rgba(28,18,8,0.1) 60%)"}}/>
-            <div style={{position:"absolute",bottom:0,left:0,right:0,padding:16}}>
-              <div style={{fontSize:24,marginBottom:4}}>☀️</div>
-              <div style={{fontFamily:"'Playfair Display',serif",fontSize:16,color:"white",lineHeight:1.2}}>{t.summer.split("\n").map((l,i)=><span key={i}>{l}{i===0&&<br/>}</span>)}</div>
-              <div style={{fontSize:10,color:"rgba(255,255,255,0.6)",marginTop:4}}>{t.summerSub}</div>
-            </div>
-          </div>
-        </div>
 
-      </div>
+      {/* Carousel */}
+      <Carousel t={t}/>
       {/* Concierge WhatsApp button */}
       <div style={{padding:"16px 20px 4px"}}>
         <a href="https://wa.me/393474029363" target="_blank" rel="noreferrer" style={{display:"flex",alignItems:"center",gap:14,background:"linear-gradient(135deg,#1c1208,#3d2008)",borderRadius:18,padding:"16px 18px",textDecoration:"none",border:"1px solid rgba(107,66,38,0.4)"}}>

@@ -69,7 +69,7 @@ const TR = {
     // Check-in
     checkinTitle: "Check-in / out",
     arrivalLabel: "🕒 Arrivo", arrivalR1: "Check-in disponibile dalle ore 14:00", arrivalR2: "Comunicateci in anticipo l'orario previsto di arrivo", arrivalR3: "Vi accoglieremo personalmente alla Baita",
-    departLabel: "🚪 Partenza", departR1: "Check-out entro le ore 11:00", departR2: "Seguite le istruzioni per la raccolta differenziata",
+    departLabel: "🚪 Partenza", departR1: "Check-out entro le ore 11:00",
     spaBookLabel: "🧖 Prenotazione SPA", spaBookText: "Comunicateci in anticipo tramite email l'orario preferito per accedere alla SPA (durata 1 ora):",
     morning: "Mattina", afternoon: "Pomeriggio / Sera", spaEmailBtn: "Invia email di prenotazione",
     addressLabel: "Indirizzo", mapsWarning: "⚠️ Usate Google Maps cercando Laconi - NU -. Evitate la segnalazione diretta «Baita Maore» che può indicare una strada non accessibile.",
@@ -206,7 +206,7 @@ const TR = {
     // FAQ
     faqTitle: "Domande frequenti",
     faqItems: [
-      { q: "🧖 Come prenoto la SPA?", a: "Inviate una email a info@baitamaore.it indicando l'orario preferito (durata 1 ora). Slot: mattina 9:30 / 11:00 · sera 15:00 / 16:30 / 18:00 / 19:30 / 21:00." },
+      { q: "🧖 Come prenoto la SPA?", a: "Inviate una email a info@baitamaore.it indicando l'orario preferito (durata 1 ora). Slot: mattina 9:30 / 11:00 · sera 15:00 / 16:30 / 18:00 / 19:30 / 21:30 (dopo cena)." },
       { q: "🍽️ Posso cenare in Baita ogni sera?", a: "La cena dello chef (4 portate, € 40 a persona) è disponibile in serate speciali. I Taglieri Baita sono disponibili a pranzo e cena." },
       { q: "🚗 Come raggiungo la Baita?", a: "Usate Google Maps cercando Laconi - NU -. Evitate la segnalazione diretta «Baita Maore» che può indicare una strada non accessibile." },
     ],
@@ -232,7 +232,7 @@ const TR = {
     contactsLabel: "📞 Contacts", webSocial: "🌐 Web & Social", website: "baitamaore.it ›", instagram: "@baitamaore ›",
     checkinTitle: "Check-in / out",
     arrivalLabel: "🕒 Arrival", arrivalR1: "Check-in available from 2:00 PM", arrivalR2: "Please let us know your estimated arrival time", arrivalR3: "We will personally welcome you at the Baita",
-    departLabel: "🚪 Departure", departR1: "Check-out by 11:00 AM", departR2: "Please follow the waste sorting instructions",
+    departLabel: "🚪 Departure", departR1: "Check-out by 11:00 AM",
     spaBookLabel: "🧖 SPA Booking", spaBookText: "Please let us know in advance your preferred time to access the SPA (1 hour session):",
     morning: "Morning", afternoon: "Afternoon / Evening", spaEmailBtn: "Send booking email",
     addressLabel: "Address", mapsWarning: "⚠️ Use Google Maps searching for Laconi - NU -. Avoid the direct «Baita Maore» navigation which may indicate an inaccessible road.",
@@ -359,7 +359,7 @@ const TR = {
     ],
     faqTitle: "FAQ",
     faqItems: [
-      { q: "🧖 How do I book the SPA?", a: "Send an email to info@baitamaore.it with your preferred time (1 hour session). Slots: morning 9:30 / 11:00 · evening 15:00 / 16:30 / 18:00 / 19:30 / 21:00." },
+      { q: "🧖 How do I book the SPA?", a: "Send an email to info@baitamaore.it with your preferred time (1 hour session). Slots: morning 9:30 / 11:00 · evening 15:00 / 16:30 / 18:00 / 19:30 / 21:30 (after dinner)." },
       { q: "🍽️ Can I have dinner at Baita every evening?", a: "The chef dinner (4 courses, € 40 per person) is available on special evenings. Baita Platters are available at lunch and dinner." },
       { q: "🚗 How do I reach the Baita?", a: "Use Google Maps searching for Laconi - NU -. Avoid the direct «Baita Maore» navigation which may indicate an inaccessible road." },
     ],
@@ -538,7 +538,7 @@ function Benvenuto({go,lang,setLang}) {
         <a href="tel:+393474029363" style={s.tel}><span style={{fontSize:13.5,color:c.dark}}>📱 Baita Maore</span><span style={{fontFamily:"Georgia,serif",fontSize:15,color:c.brown}}>347 402 9363</span></a>
         <a href="mailto:info@baitamaore.it" style={s.telLast}><span style={{fontSize:13.5,color:c.dark}}>✉️ Email</span><span style={{fontSize:13,color:c.brown}}>info@baitamaore.it</span></a>
       </Card>
-      <Card><CT text={t.webSocial}/><Row l="🌐 Website" v={t.website} link="https://www.baitamaore.it"/><Row l="📸 Instagram" v={t.instagram} link="https://www.instagram.com/baitamaore" last/></Card>
+      <Card><CT text={t.webSocial}/><Row l="🌐 Website" v={t.website} link="https://www.baitamaore.it"/><Row l="📸 Instagram" v={t.instagram} link="https://www.instagram.com/baitamaore"/><Row l="👤 Facebook" v="Baita Maore ›" link="https://www.facebook.com/baitamaore" last/></Card>
     </div>
   </div>;
 }
@@ -549,11 +549,11 @@ function Checkin({go,lang,setLang}) {
     <PageHead title={t.checkinTitle} back={()=>go("home")} icon={<Ic.lock/>}/>
     <div style={s.content}>
       <Card><CT text={t.arrivalLabel}/><Rule t={t.arrivalR1}/><Rule t={t.arrivalR2}/><Rule t={t.arrivalR3} last/></Card>
-      <Card><CT text={t.departLabel}/><Rule t={t.departR1}/><Rule t={t.departR2} last/></Card>
+      <Card><CT text={t.departLabel}/><Rule t={t.departR1} last/></Card>
       <Card><CT text={t.spaBookLabel}/>
         <p style={{fontSize:13.5,color:c.muted,marginBottom:12,lineHeight:1.65}}>{t.spaBookText}</p>
         <div style={{marginBottom:8}}><div style={{fontSize:11,letterSpacing:"2px",textTransform:"uppercase",color:c.muted,marginBottom:8}}>{t.morning}</div>{["9:30","11:00"].map(x=><span key={x} style={s.spaSlot}>{x}</span>)}</div>
-        <div><div style={{fontSize:11,letterSpacing:"2px",textTransform:"uppercase",color:c.muted,marginBottom:8}}>{t.afternoon}</div>{["15:00","16:30","18:00","19:30","21:00"].map(x=><span key={x} style={s.spaSlot}>{x}</span>)}</div>
+        <div><div style={{fontSize:11,letterSpacing:"2px",textTransform:"uppercase",color:c.muted,marginBottom:8}}>{t.afternoon}</div>{["15:00","16:30","18:00","19:30","21:30 (dopo cena)"].map(x=><span key={x} style={s.spaSlot}>{x}</span>)}</div>
         <a href="mailto:info@baitamaore.it?subject=SPA Booking" style={s.mailBtn}><Ic.mailW/> {t.spaEmailBtn}</a>
       </Card>
       <Card><CT icon={<Ic.pin/>} text={t.addressLabel}/>
@@ -583,7 +583,7 @@ function Suite({go,lang,setLang}) {
       photo:"https://res.cloudinary.com/dovpg47yh/image/upload/v1775509616/quercia_pbnmaz.jpg",
       desc: lang==="it" ? "La quercia, simbolo di forza e vita tranquilla, ispira questa suite energizzante. Due letti matrimoniali — uno al piano terra e uno sul soppalco — la rendono perfetta per famiglie o piccoli gruppi." : "The oak tree, symbol of strength and peaceful life, inspires this energising suite. Two double beds — one on the ground floor and one on the mezzanine — make it perfect for families or small groups.",
       features: lang==="it" ? ["4 posti letto · 2 letti matrimoniali","Piano terra + soppalco con scala in legno","Bagno privato con doccia a pioggia","Pavimenti in rovere","Veranda e giardino privato con salottino","Wi-Fi · TV · AC · Minibar","Accappatoio, ciabatte, borsa SPA","Colazione inclusa"] : ["4 guests · 2 double beds","Ground floor + mezzanine with wooden staircase","Private bathroom with rain shower","Oak floors","Private veranda and garden with seating","Wi-Fi · TV · AC · Minibar","Bathrobe, slippers, SPA bag","Breakfast included"],
-      badge:"Superior · 4 posti", color:c.brown,
+      badge:"fino a 4 posti · 2 letti mat.", color:c.brown,
     },
     {
       id:"abete", name:"Suite Abete", type:"superior",
@@ -591,7 +591,7 @@ function Suite({go,lang,setLang}) {
       photo:"https://res.cloudinary.com/dovpg47yh/image/upload/v1775509615/abete_mdsjxk.jpg",
       desc: lang==="it" ? "L'abete richiama la calda atmosfera natalizia e la coesione familiare. Due letti matrimoniali su due livelli, bagno separato da eleganti vetri e travi in legno. Un nido di benessere e tranquillità." : "The fir tree evokes the warm Christmas atmosphere and family togetherness. Two double beds on two levels, bathroom separated by elegant glass and wooden beams. A nest of well-being and tranquillity.",
       features: lang==="it" ? ["4 posti letto · 2 letti matrimoniali","Piano terra + soppalco con scala in legno","Bagno privato separato da vetro e travi legno","Doccia a pioggia · Pavimenti in rovere","Veranda e giardino privato con salottino","Wi-Fi · TV · AC · Minibar","Accappatoio, ciabatte, borsa SPA","Colazione inclusa"] : ["4 guests · 2 double beds","Ground floor + mezzanine with wooden staircase","Private bathroom with glass and wooden beam details","Rain shower · Oak floors","Private veranda and garden with seating","Wi-Fi · TV · AC · Minibar","Bathrobe, slippers, SPA bag","Breakfast included"],
-      badge:"Superior · 4 posti", color:c.brown,
+      badge:"fino a 4 posti · 2 letti mat.", color:c.brown,
     },
     {
       id:"leccio", name:"Suite Leccio", type:"superior",
@@ -719,7 +719,6 @@ function Spa({go,lang,setLang}) {
       </div>
       <div style={s.hlBox}><div style={s.hlTitle}>{t.spaHL}</div><p style={{fontSize:14,lineHeight:1.7,opacity:0.92,margin:0}}>{t.spaHLText}</p></div>
       <Card><CT text={t.spaAreaLabel}/>{t.spaAreaItems.map((x,i)=><Rule key={i} t={x} last={i===t.spaAreaItems.length-1}/>)}</Card>
-      <Card><CT text={t.spaLuxLabel}/>{t.spaLuxItems.map((x,i)=><Rule key={i} t={x} last={i===t.spaLuxItems.length-1}/>)}</Card>
       <div style={{fontSize:9,letterSpacing:"3px",textTransform:"uppercase",color:c.muted,margin:"20px 0 4px",textAlign:"center"}}>{t.spaPriceLabel}</div>
       <p style={{fontSize:12,color:c.muted,textAlign:"center",marginBottom:14}}>{t.spaTapHint}</p>
       <Card><CT text={t.massaggiLabel}/>{t.massaggi.map((x,i)=><TreatmentCard key={i} {...x}/>)}<div style={{height:4}}/></Card>

@@ -23,7 +23,7 @@ const s = {
   cardLabel: { fontSize: 8.5, letterSpacing: "1.5px", textTransform: "uppercase", textAlign: "center", fontWeight: 500, color: c.dark, lineHeight: 1.4 },
   pageHead: { background: c.dark, padding: "50px 24px 28px", borderRadius: "0 0 24px 24px" },
   pageTitle: { fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 36, color: c.cream, lineHeight: 1.1, margin: 0 },
-  back: { display: "flex", alignItems: "center", gap: 6, background: "none", border: "none", color: "rgba(244,237,224,0.55)", fontSize: 10, letterSpacing: "2px", textTransform: "uppercase", cursor: "pointer", marginBottom: 18, padding: 0, fontFamily: "'Raleway', sans-serif" },
+  back: { display: "flex", alignItems: "center", gap: 8, background: "rgba(255,255,255,0.12)", border: "1px solid rgba(244,237,224,0.25)", borderRadius: 20, color: "rgba(244,237,224,0.9)", fontSize: 11, letterSpacing: "1.5px", textTransform: "uppercase", cursor: "pointer", marginBottom: 18, padding: "7px 14px", fontFamily: "'Raleway', sans-serif", fontWeight: 500 },
   content: { padding: "24px 20px 60px" },
   infoCard: { background: c.white, borderRadius: 18, padding: "20px 18px", marginBottom: 12, border: `1px solid ${c.brown}12` },
   cardTitle: { fontFamily: "'Playfair Display', Georgia, serif", fontSize: 20, fontWeight: 400, marginBottom: 10, display: "flex", alignItems: "center", gap: 8 },
@@ -757,15 +757,43 @@ function Suite({go,lang,setLang}) {
   </div>;
 }
 
+function SpaCarousel() {
+  const photos = [
+    "https://res.cloudinary.com/dovpg47yh/image/upload/v1776187711/spa_5_kt3utw.jpg",
+    "https://res.cloudinary.com/dovpg47yh/image/upload/v1776187714/spa_10_vo6ey3.jpg",
+    "https://res.cloudinary.com/dovpg47yh/image/upload/v1776187714/spa_12_ipwk0d.jpg",
+    "https://res.cloudinary.com/dovpg47yh/image/upload/v1776187710/spa_4_isamen.jpg",
+  ];
+  const [cur, setCur] = useState(0);
+  const [startX, setStartX] = useState(0);
+  useEffect(()=>{ const id=setInterval(()=>setCur(c=>(c+1)%photos.length),3500); return ()=>clearInterval(id); },[]);
+  const prev = ()=>setCur(c=>(c-1+photos.length)%photos.length);
+  const next = ()=>setCur(c=>(c+1)%photos.length);
+  return (
+    <div style={{borderRadius:18,overflow:"hidden",marginBottom:12,position:"relative",height:220}}
+      onTouchStart={e=>setStartX(e.touches[0].clientX)}
+      onTouchEnd={e=>{ const dx=e.changedTouches[0].clientX-startX; if(dx<-40) next(); else if(dx>40) prev(); }}>
+      <img key={cur} src={photos[cur]} alt="SPA Baita Maore" style={{width:"100%",height:"100%",objectFit:"cover",display:"block",transition:"opacity 0.4s"}}/>
+      <div style={{position:"absolute",inset:0,background:"linear-gradient(to top,rgba(28,18,8,0.5) 0%,rgba(28,18,8,0) 50%)"}}/>
+      <button onClick={prev} style={{position:"absolute",left:10,top:"50%",transform:"translateY(-50%)",background:"rgba(255,255,255,0.2)",backdropFilter:"blur(6px)",border:"none",borderRadius:"50%",width:30,height:30,display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer"}}>
+        <svg viewBox="0 0 24 24" style={{width:13,height:13,stroke:"white",fill:"none",strokeWidth:2.5}}><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button onClick={next} style={{position:"absolute",right:10,top:"50%",transform:"translateY(-50%)",background:"rgba(255,255,255,0.2)",backdropFilter:"blur(6px)",border:"none",borderRadius:"50%",width:30,height:30,display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer"}}>
+        <svg viewBox="0 0 24 24" style={{width:13,height:13,stroke:"white",fill:"none",strokeWidth:2.5}}><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+      <div style={{position:"absolute",bottom:10,right:12,display:"flex",gap:5}}>
+        {photos.map((_,i)=><div key={i} onClick={()=>setCur(i)} style={{width:i===cur?16:6,height:6,borderRadius:3,background:i===cur?"white":"rgba(255,255,255,0.4)",transition:"all 0.3s",cursor:"pointer"}}/>)}
+      </div>
+    </div>
+  );
+}
+
 function Spa({go,lang,setLang}) {
   const t = TR[lang];
   return <div style={s.app}><FontLink/><LangToggle lang={lang} setLang={setLang}/>
     <PageHead title={t.spaTitle} sub={t.spaSub} back={()=>go("home")} icon={<Ic.spa/>}/>
     <div style={s.content}>
-      <div style={{borderRadius:18,overflow:"hidden",marginBottom:12,position:"relative",height:220}}>
-        <img src="https://res.cloudinary.com/dovpg47yh/image/upload/v1774646467/spa_baita_jndl4q.jpg" alt="SPA Baita Maore" style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}}/>
-        <div style={{position:"absolute",inset:0,background:"linear-gradient(to top,rgba(28,18,8,0.6) 0%,rgba(28,18,8,0) 50%)"}}/>
-      </div>
+      <SpaCarousel/>
       <div style={s.hlBox}><div style={s.hlTitle}>{t.spaHL}</div><p style={{fontSize:14,lineHeight:1.7,opacity:0.92,margin:0}}>{t.spaHLText}</p></div>
       <Card><CT text={t.spaAreaLabel}/>{t.spaAreaItems.map((x,i)=><Rule key={i} t={x} last={i===t.spaAreaItems.length-1}/>)}</Card>
       <div style={{fontSize:9,letterSpacing:"3px",textTransform:"uppercase",color:c.muted,margin:"20px 0 4px",textAlign:"center"}}>{t.spaPriceLabel}</div>

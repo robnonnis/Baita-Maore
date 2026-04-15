@@ -129,11 +129,11 @@ const TR = {
     activitiesLabel: "Attività con la Baita", activitiesTap: "Prenotate le vostre esperienze su misura — tocca per scoprire di più",
     bookActivity: "Prenota questa attività", openMap: "Apri mappa",
     activities: [
-      { emoji: "🚲", title: "E-bike", subtitle: "Tra i boschi e la foresta", detail: "Pedala tra i boschi di Laconi e raggiungi la Foresta di Funtamela e Bau Onu (23 km andata e ritorno). Un'esperienza immersa nella natura selvaggia della Sardegna.", photos: ["https://res.cloudinary.com/dovpg47yh/image/upload/v1774646568/ebikes__mscuyn.jpg"] },
-      { emoji: "🚗", title: "Fiat 500 d'epoca", subtitle: "Cabrio rossa degli anni '50", detail: "Riviví gli anni '50 a bordo della nostra Fiat 500 rossa cabrio d'epoca. Un'esperienza unica per scoprire i borghi sardi.", photos: ["https://res.cloudinary.com/dovpg47yh/image/upload/v1775488680/PHOTO-2026-03-29-20-52-14_y17n81.jpg"] },
+      { emoji: "🚲", title: "E-bike", subtitle: "Tra i boschi e la foresta", detail: "Pedala tra i boschi di Laconi e raggiungi la Foresta di Funtamela e Bau Onu (23 km andata e ritorno). Un'esperienza immersa nella natura selvaggia della Sardegna.", photos: ["https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_480,q_auto/v1774646568/ebikes__mscuyn.jpg"] },
+      { emoji: "🚗", title: "Fiat 500 d'epoca", subtitle: "Cabrio rossa degli anni '50", detail: "Riviví gli anni '50 a bordo della nostra Fiat 500 rossa cabrio d'epoca. Un'esperienza unica per scoprire i borghi sardi.", photos: ["https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_480,q_auto/v1775488680/PHOTO-2026-03-29-20-52-14_y17n81.jpg"] },
       { emoji: "🏍️", title: "Quad", subtitle: "Percorsi nascosti tra ruscelli e cascate", detail: "Esplora percorsi nascosti tra ruscelli, cascate e boschi incontaminati.", photos: [] },
-      { emoji: "🚌", title: "Bus Vintage «Maoretto»", subtitle: "Picnic panoramico nel bosco", detail: "Uscita con il bus vintage Maoretto per un picnic in un punto panoramico o nel bosco.", price: "Set picnic € 75 a coppia", photos: ["https://res.cloudinary.com/dovpg47yh/image/upload/v1775488681/PHOTO-2026-03-29-20-52-16_12_jadhd9.jpg"], photoPosition: "center center" },
-      { emoji: "🧺", title: "Aperitivo nel bosco", subtitle: "O in punto panoramico", detail: "Un aperitivo al tramonto nel bosco o in uno dei punti panoramici più suggestivi di Laconi.", photos: ["https://res.cloudinary.com/dovpg47yh/image/upload/v1774646471/IMG_9037_bh16nc.jpg"], photoPosition: "center center" },
+      { emoji: "🚌", title: "Bus Vintage «Maoretto»", subtitle: "Picnic panoramico nel bosco", detail: "Uscita con il bus vintage Maoretto per un picnic in un punto panoramico o nel bosco.", price: "Set picnic € 75 a coppia", photos: ["https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_480,q_auto/v1775488681/PHOTO-2026-03-29-20-52-16_12_jadhd9.jpg"], photoPosition: "center center" },
+      { emoji: "🧺", title: "Aperitivo nel bosco", subtitle: "O in punto panoramico", detail: "Un aperitivo al tramonto nel bosco o in uno dei punti panoramici più suggestivi di Laconi.", photos: ["https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_480,q_auto/v1774646471/IMG_9037_bh16nc.jpg"], photoPosition: "center center" },
     ],
     fromBaitaLabel: "🥾 A piedi dalla Baita",
     fromBaita: [
@@ -286,11 +286,11 @@ const TR = {
     activitiesLabel: "Activities with Baita Maore", activitiesTap: "Book your tailor-made experience — tap to discover more",
     bookActivity: "Book this activity", openMap: "Open map",
     activities: [
-      { emoji: "🚲", title: "E-bike", subtitle: "Through the woods and forest", detail: "Cycle through the woods of Laconi and reach Funtamela & Bau Onu Forest (23 km round trip). An immersive experience in wild Sardinian nature.", photos: ["https://res.cloudinary.com/dovpg47yh/image/upload/v1774646568/ebikes__mscuyn.jpg"] },
-      { emoji: "🚗", title: "Vintage Fiat 500", subtitle: "Red convertible from the 1950s", detail: "Relive the 1950s aboard our red vintage Fiat 500 convertible. A unique way to discover Sardinian villages.", photos: ["https://res.cloudinary.com/dovpg47yh/image/upload/v1775488680/PHOTO-2026-03-29-20-52-14_y17n81.jpg"] },
+      { emoji: "🚲", title: "E-bike", subtitle: "Through the woods and forest", detail: "Cycle through the woods of Laconi and reach Funtamela & Bau Onu Forest (23 km round trip). An immersive experience in wild Sardinian nature.", photos: ["https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_480,q_auto/v1774646568/ebikes__mscuyn.jpg"] },
+      { emoji: "🚗", title: "Vintage Fiat 500", subtitle: "Red convertible from the 1950s", detail: "Relive the 1950s aboard our red vintage Fiat 500 convertible. A unique way to discover Sardinian villages.", photos: ["https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_480,q_auto/v1775488680/PHOTO-2026-03-29-20-52-14_y17n81.jpg"] },
       { emoji: "🏍️", title: "Quad bike", subtitle: "Hidden trails through streams and waterfalls", detail: "Explore hidden trails with quad bikes, through streams, waterfalls and untouched woodland.", photos: [] },
-      { emoji: "🚌", title: "Vintage Bus «Maoretto»", subtitle: "Panoramic picnic in the woods", detail: "A trip aboard our vintage Maoretto bus to a scenic viewpoint or secret forest clearing for a picnic.", price: "Picnic set € 75 per couple", photos: ["https://res.cloudinary.com/dovpg47yh/image/upload/v1775488681/PHOTO-2026-03-29-20-52-16_12_jadhd9.jpg"], photoPosition: "center center" },
-      { emoji: "🧺", title: "Aperitif in the woods", subtitle: "Or at a panoramic viewpoint", detail: "A sunset aperitif in the woods or at one of Laconi's most breathtaking viewpoints. A romantic and authentic experience.", photos: ["https://res.cloudinary.com/dovpg47yh/image/upload/v1774646471/IMG_9037_bh16nc.jpg"], photoPosition: "center center" },
+      { emoji: "🚌", title: "Vintage Bus «Maoretto»", subtitle: "Panoramic picnic in the woods", detail: "A trip aboard our vintage Maoretto bus to a scenic viewpoint or secret forest clearing for a picnic.", price: "Picnic set € 75 per couple", photos: ["https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_480,q_auto/v1775488681/PHOTO-2026-03-29-20-52-16_12_jadhd9.jpg"], photoPosition: "center center" },
+      { emoji: "🧺", title: "Aperitif in the woods", subtitle: "Or at a panoramic viewpoint", detail: "A sunset aperitif in the woods or at one of Laconi's most breathtaking viewpoints. A romantic and authentic experience.", photos: ["https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_480,q_auto/v1774646471/IMG_9037_bh16nc.jpg"], photoPosition: "center center" },
     ],
     fromBaitaLabel: "🥾 On foot from Baita",
     fromBaita: [
@@ -466,21 +466,21 @@ function TreatmentCard({emoji,name,price,duration,desc}) {
 // ─── SCREENS ─────────────────────────────────────────────────────
 function Carousel({t}) {
   const slides = [
-    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/v1774646565/baita_snow_g7gh1o.jpg", emoji:"❄️", label:t.winter, sub:t.winterSub },
-    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/v1774646454/7C58746E-2898-455F-8F54-DFBECF932A68_L0_001-1_7_2023_14_44_36_itcw6x.jpg", emoji:"☀️", label:t.summer, sub:t.summerSub },
-    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/v1774646480/IMG_9019_gvalgq.jpg" },
-    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/v1774646481/IMG_9017_wuwrak.jpg" },
-    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/v1774646483/IMG_9013_hnsfax.jpg" },
-    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/v1774646476/IMG_9025_bxjmb7.jpg" },
-    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/v1774646471/colazione_cd8rou.jpg" },
-    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/v1774646464/PHOTO-2024-08-18-13-46-25_2_etievo.jpg" },
-    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/v1774646459/IMG_4181_r3rnxr.jpg" },
-    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/v1774646466/PHOTO-2024-08-18-13-54-50_6_gchmgn.jpg" },
-    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/v1774646488/IMG_9005_y9cjyy.jpg" },
-    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/v1774646549/IMG_8990_dgzgpp.jpg" },
-    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/v1775488680/PHOTO-2026-03-29-20-52-17_7_nbxiis.jpg" },
-    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/v1775488681/PHOTO-2026-03-29-20-52-16_11_e2voao.jpg" },
-    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/v1775488681/PHOTO-2026-03-29-20-52-17_2_pvphkk.jpg" },
+    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_450,q_auto/v1774646565/baita_snow_g7gh1o.jpg", emoji:"❄️", label:t.winter, sub:t.winterSub },
+    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_450,q_auto/v1774646454/7C58746E-2898-455F-8F54-DFBECF932A68_L0_001-1_7_2023_14_44_36_itcw6x.jpg", emoji:"☀️", label:t.summer, sub:t.summerSub },
+    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_450,q_auto/v1774646480/IMG_9019_gvalgq.jpg" },
+    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_450,q_auto/v1774646481/IMG_9017_wuwrak.jpg" },
+    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_450,q_auto/v1774646483/IMG_9013_hnsfax.jpg" },
+    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_450,q_auto/v1774646476/IMG_9025_bxjmb7.jpg" },
+    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_450,q_auto/v1774646471/colazione_cd8rou.jpg" },
+    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_450,q_auto/v1774646464/PHOTO-2024-08-18-13-46-25_2_etievo.jpg" },
+    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_450,q_auto/v1774646459/IMG_4181_r3rnxr.jpg" },
+    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_450,q_auto/v1774646466/PHOTO-2024-08-18-13-54-50_6_gchmgn.jpg" },
+    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_450,q_auto/v1774646488/IMG_9005_y9cjyy.jpg" },
+    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_450,q_auto/v1774646549/IMG_8990_dgzgpp.jpg" },
+    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_450,q_auto/v1775488680/PHOTO-2026-03-29-20-52-17_7_nbxiis.jpg" },
+    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_450,q_auto/v1775488681/PHOTO-2026-03-29-20-52-16_11_e2voao.jpg" },
+    { src:"https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_450,q_auto/v1775488681/PHOTO-2026-03-29-20-52-17_2_pvphkk.jpg" },
   ];
   const [cur, setCur] = useState(0);
   const [startX, setStartX] = useState(0);
@@ -526,7 +526,7 @@ function PH({go,lang,setLang}) {
   return (
     <div style={s.app}><FontLink/><LangToggle lang={lang} setLang={setLang}/>
       <div style={{...s.hero, background:"#1c1208", position:"relative", overflow:"hidden"}}>
-        <img src="https://res.cloudinary.com/dovpg47yh/image/upload/v1775488683/PHOTO-2026-03-29-20-52-16_1_ote8bb.jpg" alt="Baita Maore" style={{position:"absolute",top:0,left:0,width:"100%",height:"100%",objectFit:"cover",display:"block",opacity:0.7}}/>
+        <img src="https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_1200,h_700,q_auto/v1775488683/PHOTO-2026-03-29-20-52-16_1_ote8bb.jpg" alt="Baita Maore" style={{position:"absolute",top:0,left:0,width:"100%",height:"100%",objectFit:"cover",display:"block",opacity:0.7}}/>
         <div style={{position:"absolute",inset:0,background:"linear-gradient(to bottom, rgba(10,5,2,0.45) 0%, rgba(10,5,2,0.8) 100%)"}}/>
         <div style={{position:"relative",padding:"50px 24px 36px",textAlign:"center"}}>
           <div style={s.eyebrow}>Laconi · Oristano · Sardegna</div>
@@ -621,51 +621,51 @@ function Suite({go,lang,setLang}) {
   const rooms = [
     {
       id:"pino", name:"Suite Pino", type:"superior",
-      photo:"https://res.cloudinary.com/dovpg47yh/image/upload/v1775508799/SuitePino1-1-1920x650_ovbpoz.jpg",
+      photo:"https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_450,q_auto/v1775508799/SuitePino1-1-1920x650_ovbpoz.jpg",
       desc: lang==="it" ? "Immersa nel profumo del legno di pino, questa suite vi accoglierà con calore e naturalezza. Un rifugio autentico per ritrovare la serenità." : "Surrounded by the scent of pine wood, this suite welcomes you with warmth and authenticity. A genuine retreat to rediscover serenity.",
       features: lang==="it" ? ["Letto matrimoniale","Bagno privato con doccia a pioggia","Pavimenti in rovere","Veranda e giardino privato","Wi-Fi · TV · AC · Minibar","Accappatoio, ciabatte, borsa SPA","Colazione inclusa"] : ["Double bed","Private bathroom with rain shower","Oak floors","Private veranda and garden","Wi-Fi · TV · AC · Minibar","Bathrobe, slippers, SPA bag","Breakfast included"],
       badge:"Superior", color:c.brown,
     },
     {
       id:"quercia", name:"Suite Quercia", type:"superior",
-      photos:["https://res.cloudinary.com/dovpg47yh/image/upload/v1775509616/quercia_pbnmaz.jpg","https://res.cloudinary.com/dovpg47yh/image/upload/v1775509616/quercia_2_gvav0s.jpg"],
-      photo:"https://res.cloudinary.com/dovpg47yh/image/upload/v1775509616/quercia_pbnmaz.jpg",
+      photos:["https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_450,q_auto/v1775509616/quercia_pbnmaz.jpg","https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_500,q_auto/v1775509616/quercia_2_gvav0s.jpg"],
+      photo:"https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_450,q_auto/v1775509616/quercia_pbnmaz.jpg",
       desc: lang==="it" ? "La quercia, simbolo di forza e vita tranquilla, ispira questa suite energizzante. Due letti matrimoniali — uno al piano terra e uno sul soppalco — la rendono perfetta per famiglie o piccoli gruppi." : "The oak tree, symbol of strength and peaceful life, inspires this energising suite. Two double beds — one on the ground floor and one on the mezzanine — make it perfect for families or small groups.",
       features: lang==="it" ? ["4 posti letto · 2 letti matrimoniali","Piano terra + soppalco con scala in legno","Bagno privato con doccia a pioggia","Pavimenti in rovere","Veranda e giardino privato con salottino","Wi-Fi · TV · AC · Minibar","Accappatoio, ciabatte, borsa SPA","Colazione inclusa"] : ["4 guests · 2 double beds","Ground floor + mezzanine with wooden staircase","Private bathroom with rain shower","Oak floors","Private veranda and garden with seating","Wi-Fi · TV · AC · Minibar","Bathrobe, slippers, SPA bag","Breakfast included"],
       badge:"fino a 4 posti · 2 letti mat.", color:c.brown,
     },
     {
       id:"abete", name:"Suite Abete", type:"superior",
-      photos:["https://res.cloudinary.com/dovpg47yh/image/upload/v1775509615/abete_mdsjxk.jpg","https://res.cloudinary.com/dovpg47yh/image/upload/v1775509616/abete_2_cfnfgn.jpg"],
-      photo:"https://res.cloudinary.com/dovpg47yh/image/upload/v1775509615/abete_mdsjxk.jpg",
+      photos:["https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_450,q_auto/v1775509615/abete_mdsjxk.jpg","https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_500,q_auto/v1775509616/abete_2_cfnfgn.jpg"],
+      photo:"https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_450,q_auto/v1775509615/abete_mdsjxk.jpg",
       desc: lang==="it" ? "L'abete richiama la calda atmosfera natalizia e la coesione familiare. Due letti matrimoniali su due livelli, bagno separato da eleganti vetri e travi in legno. Un nido di benessere e tranquillità." : "The fir tree evokes the warm Christmas atmosphere and family togetherness. Two double beds on two levels, bathroom separated by elegant glass and wooden beams. A nest of well-being and tranquillity.",
       features: lang==="it" ? ["4 posti letto · 2 letti matrimoniali","Piano terra + soppalco con scala in legno","Bagno privato separato da vetro e travi legno","Doccia a pioggia · Pavimenti in rovere","Veranda e giardino privato con salottino","Wi-Fi · TV · AC · Minibar","Accappatoio, ciabatte, borsa SPA","Colazione inclusa"] : ["4 guests · 2 double beds","Ground floor + mezzanine with wooden staircase","Private bathroom with glass and wooden beam details","Rain shower · Oak floors","Private veranda and garden with seating","Wi-Fi · TV · AC · Minibar","Bathrobe, slippers, SPA bag","Breakfast included"],
       badge:"fino a 4 posti · 2 letti mat.", color:c.brown,
     },
     {
       id:"leccio", name:"Suite Leccio", type:"superior",
-      photo:"https://res.cloudinary.com/dovpg47yh/image/upload/v1775508799/SuiteLeccio1-1920x650_wbvo07.jpg",
+      photo:"https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_450,q_auto/v1775508799/SuiteLeccio1-1920x650_wbvo07.jpg",
       desc: lang==="it" ? "Il leccio è l'albero simbolo della Sardegna. Questa suite ne richiama la solidità e il calore, in un ambiente raffinato e accogliente." : "The holm oak is the symbol of Sardinia. This suite reflects its solidity and warmth in a refined and welcoming environment.",
       features: lang==="it" ? ["Letto matrimoniale","Bagno privato con doccia a pioggia","Pavimenti in rovere","Veranda privata con vista giardino","Wi-Fi gratuito · TV · Minibar","Colazione inclusa"] : ["Double bed","Private bathroom with rain shower","Oak floors","Private veranda with garden view","Free Wi-Fi · TV · Minibar","Breakfast included"],
       badge:"Superior", color:c.brown,
     },
     {
       id:"ulivo", name:"Suite Ulivo", type:"superior",
-      photo:"https://res.cloudinary.com/dovpg47yh/image/upload/v1775508800/SuiteUlivo1-1-1920x650_yqg7ky.jpg",
+      photo:"https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_450,q_auto/v1775508800/SuiteUlivo1-1-1920x650_yqg7ky.jpg",
       desc: lang==="it" ? "Come l'ulivo, simbolo di pace e longevità, questa suite offre un'atmosfera serena e senza tempo, perfetta per rigenerarsi." : "Like the olive tree, symbol of peace and longevity, this suite offers a serene and timeless atmosphere, perfect for rejuvenation.",
       features: lang==="it" ? ["Letto matrimoniale","Bagno privato con doccia a pioggia","Pavimenti in rovere","Veranda privata con vista giardino","Wi-Fi gratuito · TV · Minibar","Colazione inclusa"] : ["Double bed","Private bathroom with rain shower","Oak floors","Private veranda with garden view","Free Wi-Fi · TV · Minibar","Breakfast included"],
       badge:"Superior", color:c.brown,
     },
     {
       id:"pioppo", name:"Luxury Suite Pioppo", type:"luxury",
-      photo:"https://res.cloudinary.com/dovpg47yh/image/upload/v1775508799/pioppo1-1920x650_abs8ao.jpg",
+      photo:"https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_450,q_auto/v1775508799/pioppo1-1920x650_abs8ao.jpg",
       desc: lang==="it" ? "Situata nella nuova ala della Baita, questa esclusiva suite di 45 m² con legno di rovere pregiato offre momenti di intimo relax con SPA privata ad uso esclusivo." : "Located in the new wing of the Baita, this exclusive 45 sqm suite in fine oak wood offers moments of intimate relaxation with a private SPA for exclusive use.",
       features: lang==="it" ? ["45 m² di privacy totale","SPA privata ad uso esclusivo","Jacuzzi · Sauna · Doccia cromoterapica","Letto matrimoniale · Camino","Veranda privata","Wi-Fi gratuito · TV · Minibar","Colazione inclusa"] : ["45 sqm of total privacy","Private SPA for exclusive use","Jacuzzi · Sauna · Chromotherapy shower","Double bed · Fireplace","Private veranda","Free Wi-Fi · TV · Minibar","Breakfast included"],
       badge:"Luxury + SPA privata", color:"#2d1a0e",
     },
     {
       id:"cedro", name:"Luxury Suite Cedro", type:"luxury",
-      photo:"https://res.cloudinary.com/dovpg47yh/image/upload/v1775508806/cedro1-1920x650_kn3mfy.png",
+      photo:"https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_450,q_auto/v1775508806/cedro1-1920x650_kn3mfy.png",
       desc: lang==="it" ? "Pensata in ogni dettaglio per chi vuole viziarsi in un'oasi personale di pace. Il profumo del cedro e la SPA privata rendono il soggiorno indimenticabile." : "Designed in every detail for those who want to indulge in a personal oasis of peace. The scent of cedar and the private SPA make your stay unforgettable.",
       features: lang==="it" ? ["45 m² di privacy totale","SPA privata ad uso esclusivo","Jacuzzi · Sauna · Doccia cromoterapica","Letto matrimoniale · Camino elettrico","Veranda privata","Wi-Fi gratuito · TV · Minibar","Colazione inclusa"] : ["45 sqm of total privacy","Private SPA for exclusive use","Jacuzzi · Sauna · Chromotherapy shower","Double bed · Electric fireplace","Private veranda","Free Wi-Fi · TV · Minibar","Breakfast included"],
       badge:"Luxury + SPA privata", color:"#2d1a0e",
@@ -759,10 +759,10 @@ function Suite({go,lang,setLang}) {
 
 function SpaCarousel() {
   const photos = [
-    "https://res.cloudinary.com/dovpg47yh/image/upload/v1776187711/spa_5_kt3utw.jpg",
-    "https://res.cloudinary.com/dovpg47yh/image/upload/v1776187714/spa_10_vo6ey3.jpg",
-    "https://res.cloudinary.com/dovpg47yh/image/upload/v1776187714/spa_12_ipwk0d.jpg",
-    "https://res.cloudinary.com/dovpg47yh/image/upload/v1776187710/spa_4_isamen.jpg",
+    "https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_500,q_auto/v1776187711/spa_5_kt3utw.jpg",
+    "https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_500,q_auto/v1776187714/spa_10_vo6ey3.jpg",
+    "https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_500,q_auto/v1776187714/spa_12_ipwk0d.jpg",
+    "https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_500,q_auto/v1776187710/spa_4_isamen.jpg",
   ];
   const [cur, setCur] = useState(0);
   const [startX, setStartX] = useState(0);
@@ -816,7 +816,7 @@ function Piscina({go,lang,setLang}) {
     <PageHead title={t.piscinaTitle} sub={t.piscinaSub} back={()=>go("home")} icon={<Ic.pool/>}/>
     <div style={s.content}>
       <div style={{borderRadius:18,overflow:"hidden",marginBottom:12}}>
-        <img src="https://res.cloudinary.com/dovpg47yh/image/upload/v1775488680/PHOTO-2026-03-29-20-52-14_1_vfqfu9.jpg" alt="Piscina Baita Maore" style={{width:"100%",height:220,objectFit:"cover",display:"block"}}/>
+        <img src="https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_500,q_auto/v1775488680/PHOTO-2026-03-29-20-52-14_1_vfqfu9.jpg" alt="Piscina Baita Maore" style={{width:"100%",height:220,objectFit:"cover",display:"block"}}/>
       </div>
       <div style={s.hlBox}><div style={s.hlTitle}>{t.piscinaHL}</div><p style={{fontSize:14,lineHeight:1.7,opacity:0.92,margin:0}}>{t.piscinaHLText}</p></div>
       <Card><CT text={t.estateLabel}/>{t.estateItems.map((x,i)=><Rule key={i} t={x} last={i===t.estateItems.length-1}/>)}</Card>

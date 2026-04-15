@@ -759,10 +759,10 @@ function Suite({go,lang,setLang}) {
 
 function SpaCarousel() {
   const photos = [
-    "https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_500,q_auto/v1776187711/spa_5_kt3utw.jpg",
-    "https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_500,q_auto/v1776187714/spa_10_vo6ey3.jpg",
-    "https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_500,q_auto/v1776187714/spa_12_ipwk0d.jpg",
-    "https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_500,q_auto/v1776187710/spa_4_isamen.jpg",
+    "https://res.cloudinary.com/dovpg47yh/image/upload/v1776187711/spa_5_kt3utw.jpg",
+    "https://res.cloudinary.com/dovpg47yh/image/upload/v1776187714/spa_10_vo6ey3.jpg",
+    "https://res.cloudinary.com/dovpg47yh/image/upload/v1776187714/spa_12_ipwk0d.jpg",
+    "https://res.cloudinary.com/dovpg47yh/image/upload/v1776187710/spa_4_isamen.jpg",
   ];
   const [cur, setCur] = useState(0);
   const [startX, setStartX] = useState(0);
@@ -770,10 +770,10 @@ function SpaCarousel() {
   const prev = ()=>setCur(c=>(c-1+photos.length)%photos.length);
   const next = ()=>setCur(c=>(c+1)%photos.length);
   return (
-    <div style={{borderRadius:18,overflow:"hidden",marginBottom:12,position:"relative",height:220}}
+    <div style={{borderRadius:18,overflow:"hidden",marginBottom:12,position:"relative"}}
       onTouchStart={e=>setStartX(e.touches[0].clientX)}
       onTouchEnd={e=>{ const dx=e.changedTouches[0].clientX-startX; if(dx<-40) next(); else if(dx>40) prev(); }}>
-      <img key={cur} src={photos[cur]} alt="SPA Baita Maore" style={{width:"100%",height:"100%",objectFit:"cover",display:"block",transition:"opacity 0.4s"}}/>
+      <img key={cur} src={photos[cur]} alt="SPA Baita Maore" style={{width:"100%",height:"auto",display:"block",transition:"opacity 0.4s"}}/>
       <div style={{position:"absolute",inset:0,background:"linear-gradient(to top,rgba(28,18,8,0.5) 0%,rgba(28,18,8,0) 50%)"}}/>
       <button onClick={prev} style={{position:"absolute",left:10,top:"50%",transform:"translateY(-50%)",background:"rgba(255,255,255,0.2)",backdropFilter:"blur(6px)",border:"none",borderRadius:"50%",width:30,height:30,display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer"}}>
         <svg viewBox="0 0 24 24" style={{width:13,height:13,stroke:"white",fill:"none",strokeWidth:2.5}}><polyline points="15 18 9 12 15 6"/></svg>
@@ -816,7 +816,7 @@ function Piscina({go,lang,setLang}) {
     <PageHead title={t.piscinaTitle} sub={t.piscinaSub} back={()=>go("home")} icon={<Ic.pool/>}/>
     <div style={s.content}>
       <div style={{borderRadius:18,overflow:"hidden",marginBottom:12}}>
-        <img src="https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_800,h_500,q_auto/v1775488680/PHOTO-2026-03-29-20-52-14_1_vfqfu9.jpg" alt="Piscina Baita Maore" style={{width:"100%",height:220,objectFit:"cover",display:"block"}}/>
+        <img src="https://res.cloudinary.com/dovpg47yh/image/upload/v1775488680/PHOTO-2026-03-29-20-52-14_1_vfqfu9.jpg" alt="Piscina Baita Maore" style={{width:"100%",height:"auto",display:"block"}}/>
       </div>
       <div style={s.hlBox}><div style={s.hlTitle}>{t.piscinaHL}</div><p style={{fontSize:14,lineHeight:1.7,opacity:0.92,margin:0}}>{t.piscinaHLText}</p></div>
       <Card><CT text={t.estateLabel}/>{t.estateItems.map((x,i)=><Rule key={i} t={x} last={i===t.estateItems.length-1}/>)}</Card>

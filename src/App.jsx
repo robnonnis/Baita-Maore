@@ -529,9 +529,9 @@ function PH({go,lang,setLang}) {
         <img src="https://res.cloudinary.com/dovpg47yh/image/upload/c_fill,g_auto,w_1200,h_700,q_auto/v1775488683/PHOTO-2026-03-29-20-52-16_1_ote8bb.jpg" alt="Baita Maore" style={{position:"absolute",top:0,left:0,width:"100%",height:"100%",objectFit:"cover",display:"block",opacity:0.7}}/>
         <div style={{position:"absolute",inset:0,background:"linear-gradient(to bottom, rgba(10,5,2,0.45) 0%, rgba(10,5,2,0.8) 100%)"}}/>
         <div style={{position:"relative",padding:"50px 24px 36px",textAlign:"center"}}>
-          <div style={s.eyebrow}>Laconi · Oristano · Sardegna</div>
+          <div style={{fontSize:10,letterSpacing:"4px",textTransform:"uppercase",color:"rgba(244,237,224,0.9)",fontWeight:600,marginBottom:10,fontFamily:"'Raleway',sans-serif",textShadow:"0 1px 4px rgba(0,0,0,0.5)"}}>Laconi · Oristano · Sardegna</div>
           <img src="https://res.cloudinary.com/dovpg47yh/image/upload/v1774558967/IMG_8927_t7ppwk.png" alt="Baita Maore" style={{width:210,maxWidth:"65vw",display:"block",margin:"8px auto 14px",height:"auto",filter:"brightness(0) invert(1)",opacity:0.95}}/>
-          <div style={{fontSize:10,letterSpacing:"3px",textTransform:"uppercase",color:"rgba(244,237,224,0.75)",marginTop:4,fontFamily:"'Raleway',sans-serif",fontWeight:300}}>{t.heroSub}</div>
+          <div style={{fontSize:11,letterSpacing:"2.5px",textTransform:"uppercase",color:"rgba(244,237,224,0.95)",marginTop:8,fontFamily:"'Raleway',sans-serif",fontWeight:400,textShadow:"0 1px 4px rgba(0,0,0,0.6)"}}>{t.heroSub}</div>
           <div style={{width:32,height:1,background:c.brownL,margin:"12px auto 0"}}/>
         </div>
       </div>
@@ -710,7 +710,7 @@ function Suite({go,lang,setLang}) {
               <div style={{padding:"14px 18px 18px"}}>
                 <p style={{fontSize:13.5,lineHeight:1.75,color:c.muted,margin:"0 0 14px"}}>{room.desc}</p>
                 {room.features.map((f,i)=><div key={i} style={{display:"flex",gap:10,padding:"8px 0",borderBottom:i<room.features.length-1?`1px solid ${c.sand}`:"none",alignItems:"flex-start"}}><div style={{width:6,height:6,borderRadius:"50%",background:room.color,flexShrink:0,marginTop:6}}/><span style={{fontSize:13.5}}>{f}</span></div>)}
-                <a href="https://baitamaore.it/disponibilita-camere/" target="_blank" rel="noreferrer" style={{display:"flex",alignItems:"center",gap:8,background:room.color,color:"white",borderRadius:12,padding:"12px 16px",textDecoration:"none",fontSize:13,marginTop:16,justifyContent:"center"}}>{lang==="it"?"🗓️ Verifica disponibilità":"🗓️ Check availability"}</a>
+                <a href="https://baitamaore.it/?page_id=6620" target="_blank" rel="noreferrer" style={{display:"flex",alignItems:"center",gap:8,background:room.color,color:"white",borderRadius:12,padding:"12px 16px",textDecoration:"none",fontSize:13,marginTop:16,justifyContent:"center"}}>{lang==="it"?"🗓️ Verifica disponibilità":"🗓️ Check availability"}</a>
               </div>
             </div>)}
           </div>
@@ -745,7 +745,7 @@ function Suite({go,lang,setLang}) {
               <div style={{padding:"14px 18px 18px"}}>
                 <p style={{fontSize:13.5,lineHeight:1.75,color:c.muted,margin:"0 0 14px"}}>{room.desc}</p>
                 {room.features.map((f,i)=><div key={i} style={{display:"flex",gap:10,padding:"8px 0",borderBottom:i<room.features.length-1?`1px solid ${c.sand}`:"none",alignItems:"flex-start"}}><div style={{width:6,height:6,borderRadius:"50%",background:room.color,flexShrink:0,marginTop:6}}/><span style={{fontSize:13.5}}>{f}</span></div>)}
-                <a href="https://baitamaore.it/disponibilita-camere/" target="_blank" rel="noreferrer" style={{display:"flex",alignItems:"center",gap:8,background:room.color,color:"white",borderRadius:12,padding:"12px 16px",textDecoration:"none",fontSize:13,marginTop:16,justifyContent:"center"}}>{lang==="it"?"🗓️ Verifica disponibilità":"🗓️ Check availability"}</a>
+                <a href="https://baitamaore.it/?page_id=6620" target="_blank" rel="noreferrer" style={{display:"flex",alignItems:"center",gap:8,background:room.color,color:"white",borderRadius:12,padding:"12px 16px",textDecoration:"none",fontSize:13,marginTop:16,justifyContent:"center"}}>{lang==="it"?"🗓️ Verifica disponibilità":"🗓️ Check availability"}</a>
               </div>
             </div>)}
           </div>

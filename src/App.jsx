@@ -95,20 +95,20 @@ const TR = {
     spaBookTitle: "Prenota il tuo trattamento", spaBookSubtext: "Comunicateci in anticipo l'orario preferito per accedere alla SPA.",
     spaEmailBook: "Prenota via email",
     massaggi: [
-      { emoji: "🌿", name: "Relax", price: "€ 55,00", duration: "50 min", desc: "Un trattamento per ritrovare il rilassamento mentale, grazie alle essenze pregiate di bergamotto, limone, gelsomino, gardenia, menta e cedro." },
-      { emoji: "💪", name: "Decontratturante", price: "€ 55,00", duration: "50 min", desc: null },
-      { emoji: "💧", name: "Linfodrenante", price: "€ 60,00", duration: "60 min", desc: null },
-      { emoji: "✨", name: "Modellante", price: "€ 60,00", duration: "50 min", desc: null },
+      { emoji: "🌿", name: "Relax", price: "€ 60,00", duration: "50 min", desc: "Un trattamento per ritrovare il rilassamento mentale, grazie alle essenze pregiate di bergamotto, limone, gelsomino, gardenia, menta e cedro." },
+      { emoji: "💪", name: "Decontratturante", price: "€ 60,00", duration: "50 min", desc: null },
+      { emoji: "💧", name: "Linfodrenante", price: "€ 65,00", duration: "60 min", desc: null },
+      { emoji: "✨", name: "Modellante", price: "€ 65,00", duration: "50 min", desc: null },
     ],
     trattamenti: [
-      { emoji: "🪮", name: "Spazzolatura del corpo", price: "€ 50,00", duration: "50 min", desc: "Con l'ausilio di spazzole si strofina sulla pelle nuda asciutta, partendo dalle estremità verso il cuore. Tonifica i tessuti, ridona colore e lucentezza alla pelle." },
-      { emoji: "🦵", name: "Gambe leggere", price: "€ 55,00", duration: "45 min", desc: "Avvolgimento con fango e gel freddo tri-attivo con escina, arnica, menta piperita, meliloto e mentolo — sollievo per gambe e caviglie stanche." },
+      { emoji: "🪮", name: "Spazzolatura del corpo", price: "€ 60,00", duration: "50 min", desc: "Con l'ausilio di spazzole si strofina sulla pelle nuda asciutta, partendo dalle estremità verso il cuore. Tonifica i tessuti, ridona colore e lucentezza alla pelle." },
+      { emoji: "🦵", name: "Gambe leggere", price: "€ 60,00", duration: "45 min", desc: "Avvolgimento con fango e gel freddo tri-attivo con escina, arnica, menta piperita, meliloto e mentolo — sollievo per gambe e caviglie stanche." },
     ],
     viso: [
       { emoji: "🧖", name: "Pulizia viso base", price: "€ 50,00", duration: "50 min", desc: null },
       { emoji: "🌱", name: "Trattamento Detox", price: "€ 55,00", duration: "60 min", desc: null },
       { emoji: "⏳", name: "Antiage / Antimacchia", price: "€ 60,00", duration: "75 min", desc: null },
-      { emoji: "✨", name: "Trattamento occhi", price: "€ 55,00", duration: "30 min", desc: "A base di oro puro colloidale, peptidi e cellule staminali vegetali — per borse palpebrali, rughe ed occhiaie scure." },
+      { emoji: "✨", name: "Trattamento occhi", price: "€ 50,00", duration: "30 min", desc: "A base di oro puro colloidale, peptidi e cellule staminali vegetali — per borse palpebrali, rughe ed occhiaie scure." },
     ],
     // Piscina
     piscinaTitle: "Piscina", piscinaSub: "Aperta tutto l'anno",
@@ -256,20 +256,20 @@ const TR = {
     spaBookTitle: "Book your treatment", spaBookSubtext: "Let us know in advance your preferred time to access the SPA.",
     spaEmailBook: "Book via email",
     massaggi: [
-      { emoji: "🌿", name: "Relaxing", price: "€ 55.00", duration: "50 min", desc: "A treatment to restore mental relaxation, with precious bergamot, lemon, jasmine, gardenia, mint and cedar essences." },
-      { emoji: "💪", name: "Deep tissue", price: "€ 55.00", duration: "50 min", desc: null },
-      { emoji: "💧", name: "Lymphatic drainage", price: "€ 60.00", duration: "60 min", desc: null },
-      { emoji: "✨", name: "Sculpting", price: "€ 60.00", duration: "50 min", desc: null },
+      { emoji: "🌿", name: "Relaxing", price: "€ 60.00", duration: "50 min", desc: "A treatment to restore mental relaxation, with precious bergamot, lemon, jasmine, gardenia, mint and cedar essences." },
+      { emoji: "💪", name: "Deep tissue", price: "€ 60.00", duration: "50 min", desc: null },
+      { emoji: "💧", name: "Lymphatic drainage", price: "€ 65.00", duration: "60 min", desc: null },
+      { emoji: "✨", name: "Sculpting", price: "€ 65.00", duration: "50 min", desc: null },
     ],
     trattamenti: [
-      { emoji: "🪮", name: "Body brushing", price: "€ 50.00", duration: "50 min", desc: "Using brushes on dry skin, from extremities towards the heart. Tones tissues, restores colour and radiance, relaxes muscle tension and stimulates circulation." },
-      { emoji: "🦵", name: "Light legs", price: "€ 55.00", duration: "45 min", desc: "Wrap with tri-active cooling mud and gel with escin, arnica, peppermint, melilot and menthol — relief for tired, heavy legs." },
+      { emoji: "🪮", name: "Body brushing", price: "€ 60.00", duration: "50 min", desc: "Using brushes on dry skin, from extremities towards the heart. Tones tissues, restores colour and radiance, relaxes muscle tension and stimulates circulation." },
+      { emoji: "🦵", name: "Light legs", price: "€ 60.00", duration: "45 min", desc: "Wrap with tri-active cooling mud and gel with escin, arnica, peppermint, melilot and menthol — relief for tired, heavy legs." },
     ],
     viso: [
       { emoji: "🧖", name: "Basic facial cleanse", price: "€ 50.00", duration: "50 min", desc: null },
       { emoji: "🌱", name: "Detox treatment", price: "€ 55.00", duration: "60 min", desc: null },
       { emoji: "⏳", name: "Anti-age / Anti-spot", price: "€ 60.00", duration: "75 min", desc: null },
-      { emoji: "✨", name: "Eye treatment", price: "€ 55.00", duration: "30 min", desc: "Based on pure colloidal gold, peptides and plant stem cells — to effectively combat under-eye bags, wrinkles and dark circles." },
+      { emoji: "✨", name: "Eye treatment", price: "€ 50.00", duration: "30 min", desc: "Based on pure colloidal gold, peptides and plant stem cells — to effectively combat under-eye bags, wrinkles and dark circles." },
     ],
     piscinaTitle: "Pool", piscinaSub: "Open all year round",
     piscinaHL: "In every season", piscinaHLText: "The pool is at your complete disposal for the entire duration of your stay.",
@@ -584,7 +584,7 @@ function Benvenuto({go,lang,setLang}) {
       <Card><CT icon={<Ic.lock/>} text={t.checkinLabel}/><Row l="Check-in" v={t.checkinIn}/><Row l="Check-out" v={t.checkinOut} last/></Card>
       <Card><CT text={t.contactsLabel}/>
         <a href="tel:+393392156270" style={s.tel}><span style={{fontSize:13.5,color:c.dark}}>📱 Baita Maore</span><span style={{fontFamily:"Georgia,serif",fontSize:15,color:c.brown}}>339 215 6270</span></a>
-        <a href="tel:+393474029363" style={s.tel}><span style={{fontSize:13.5,color:c.dark}}>📱 Baita Maore</span><span style={{fontFamily:"Georgia,serif",fontSize:15,color:c.brown}}>347 402 9363</span></a>
+        <a href="tel:+393474029363" style={s.tel}><span style={{fontSize:13.5,color:c.dark}}>📱 Riccardo</span><span style={{fontFamily:"Georgia,serif",fontSize:15,color:c.brown}}>347 402 9363</span></a>
         <a href="mailto:info@baitamaore.it" style={s.telLast}><span style={{fontSize:13.5,color:c.dark}}>✉️ Email</span><span style={{fontSize:13,color:c.brown}}>info@baitamaore.it</span></a>
       </Card>
       <Card><CT text={t.webSocial}/><Row l="🌐 Website" v={t.website} link="https://www.baitamaore.it"/><Row l="📸 Instagram" v={t.instagram} link="https://www.instagram.com/baitamaore"/><Row l="👤 Facebook" v="Baita Maore ›" link="https://www.facebook.com/baitamaore" last/></Card>
@@ -1110,7 +1110,7 @@ function FAQ({go,lang,setLang}) {
       <Card><CT text={t.faqHelp}/>
         <p style={{fontSize:13.5,color:c.muted,marginBottom:8,lineHeight:1.65}}>{t.faqHelpText}</p>
         <a href="tel:+393392156270" style={s.tel}><span style={{fontSize:13.5,color:c.dark}}>📱 Baita Maore</span><span style={{fontFamily:"Georgia,serif",fontSize:15,color:c.brown}}>339 215 6270</span></a>
-        <a href="tel:+393474029363" style={s.tel}><span style={{fontSize:13.5,color:c.dark}}>📱 Baita Maore</span><span style={{fontFamily:"Georgia,serif",fontSize:15,color:c.brown}}>347 402 9363</span></a>
+        <a href="tel:+393474029363" style={s.tel}><span style={{fontSize:13.5,color:c.dark}}>📱 Riccardo</span><span style={{fontFamily:"Georgia,serif",fontSize:15,color:c.brown}}>347 402 9363</span></a>
         <a href="mailto:info@baitamaore.it" style={s.telLast}><span style={{fontSize:13.5,color:c.dark}}>✉️ Email</span><span style={{fontSize:13,color:c.brown}}>info@baitamaore.it</span></a>
       </Card>
     </div>

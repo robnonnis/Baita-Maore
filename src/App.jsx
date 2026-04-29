@@ -672,11 +672,6 @@ function PH({go,lang,setLang}) {
         </div>
       </div>
 
-      {/* Weather */}
-      <div style={{padding:"12px 0 0"}}>
-        <Weather lang={lang}/>
-      </div>
-
       {/* Carousel */}
       <Carousel t={t}/>
       {/* Concierge WhatsApp button */}
@@ -704,7 +699,11 @@ function PH({go,lang,setLang}) {
           </div>
         ))}
       </div>
-      <div style={{height:32}}/>
+      {/* Weather footer */}
+      <div style={{padding:"8px 20px 32px"}}>
+        <div style={{fontSize:9,letterSpacing:"4px",textTransform:"uppercase",color:c.muted,textAlign:"center",margin:"8px 0 12px"}}>{lang==="it"?"Meteo a Laconi":"Weather in Laconi"}</div>
+        <Weather lang={lang}/>
+      </div>
     </div>
   );
 }

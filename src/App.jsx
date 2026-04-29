@@ -1,7 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const FontLink = () => (
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Raleway:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
+  <>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Raleway:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
+    <style>{`@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}`}</style>
+  </>
 );
 
 const c = {
@@ -24,7 +27,7 @@ const s = {
   pageHead: { background: c.dark, padding: "50px 24px 28px", borderRadius: "0 0 24px 24px" },
   pageTitle: { fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 400, fontSize: 36, color: c.cream, lineHeight: 1.1, margin: 0 },
   back: { display: "flex", alignItems: "center", gap: 8, background: "rgba(255,255,255,0.12)", border: "1px solid rgba(244,237,224,0.25)", borderRadius: 20, color: "rgba(244,237,224,0.9)", fontSize: 11, letterSpacing: "1.5px", textTransform: "uppercase", cursor: "pointer", marginBottom: 18, padding: "7px 14px", fontFamily: "'Raleway', sans-serif", fontWeight: 500 },
-  content: { padding: "24px 20px 60px" },
+  content: { padding: "24px 20px 60px", animation: "fadeIn 0.3s ease" },
   infoCard: { background: c.white, borderRadius: 18, padding: "20px 18px", marginBottom: 12, border: `1px solid ${c.brown}12` },
   cardTitle: { fontFamily: "'Playfair Display', Georgia, serif", fontSize: 20, fontWeight: 400, marginBottom: 10, display: "flex", alignItems: "center", gap: 8 },
   row: { display: "flex", alignItems: "center", justifyContent: "space-between", padding: "11px 0", borderBottom: `1px solid ${c.sand}` },
@@ -463,6 +466,105 @@ function TreatmentCard({emoji,name,price,duration,desc}) {
   );
 }
 
+
+// ─── WEATHER ─────────────────────────────────────────────────────
+function Weather({lang}) {
+  const [wx, setWx] = useState(null);
+  useEffect(()=>{
+    fetch("https://api.open-meteo.com/v1/forecast?latitude=39.865&longitude=9.058&current=temperature_2m,weathercode,windspeed_10m&timezone=Europe/Rome")
+      .then(r=>r.json())
+      .then(d=>{
+        const code = d.current.weathercode;
+        const temp = Math.round(d.current.temperature_2m);
+        const wind = Math.round(d.current.windspeed_10m);
+        const icons = {
+          0:"☀️", 1:"🌤️", 2:"⛅", 3:"☁️",
+          45:"🌫️", 48:"🌫️",
+          51:"🌦️", 53:"🌦️", 55:"🌧️",
+          61:"🌧️", 63:"🌧️", 65:"🌧️",
+          71:"🌨️", 73:"🌨️", 75:"❄️",
+          80:"🌦️", 81:"🌧️", 82:"⛈️",
+          95:"⛈️", 96:"⛈️", 99:"⛈️",
+        };
+        const descs_it = {
+          0:"Sereno", 1:"Parzialmente soleggiato", 2:"Parzialmente nuvoloso", 3:"Nuvoloso",
+          45:"Nebbia", 48:"Nebbia", 51:"Pioggerella", 53:"Pioggerella", 55:"Pioggerella intensa",
+          61:"Pioggia leggera", 63:"Pioggia", 65:"Pioggia intensa",
+          71:"Neve leggera", 73:"Neve", 75:"Neve intensa",
+          80:"Rovesci", 81:"Rovesci", 82:"Rovesci intensi",
+          95:"Temporale", 96:"Temporale", 99:"Temporale con grandine",
+        };
+        const descs_en = {
+          0:"Clear sky", 1:"Mainly clear", 2:"Partly cloudy", 3:"Overcast",
+          45:"Foggy", 48:"Foggy", 51:"Drizzle", 53:"Drizzle", 55:"Heavy drizzle",
+          61:"Light rain", 63:"Rain", 65:"Heavy rain",
+          71:"Light snow", 73:"Snow", 75:"Heavy snow",
+          80:"Showers", 81:"Showers", 82:"Heavy showers",
+          95:"Thunderstorm", 96:"Thunderstorm", 99:"Thunderstorm with hail",
+        };
+        setWx({
+          temp, wind,
+          icon: icons[code] || "🌡️",
+          desc_it: descs_it[code] || "—",
+          desc_en: descs_en[code] || "—",
+        });
+      }).catch(()=>{});
+  },[]);
+  if(!wx) return null;
+  return (
+    <div style={{margin:"0 20px 0",background:"linear-gradient(135deg,rgba(28,18,8,0.85),rgba(61,32,8,0.85))",backdropFilter:"blur(10px)",borderRadius:16,padding:"14px 18px",border:"1px solid rgba(255,255,255,0.1)",display:"flex",alignItems:"center",gap:14}}>
+      <div style={{fontSize:36,flexShrink:0}}>{wx.icon}</div>
+      <div style={{flex:1}}>
+        <div style={{fontSize:9,letterSpacing:"3px",textTransform:"uppercase",color:"rgba(244,237,224,0.5)",marginBottom:3}}>Laconi · {lang==="it"?"Adesso":"Right now"}</div>
+        <div style={{display:"flex",alignItems:"baseline",gap:6}}>
+          <span style={{fontFamily:"'Playfair Display',serif",fontSize:32,color:"white",lineHeight:1}}>{wx.temp}°</span>
+          <span style={{fontSize:13,color:"rgba(244,237,224,0.8)"}}>{lang==="it"?wx.desc_it:wx.desc_en}</span>
+        </div>
+        <div style={{fontSize:11,color:"rgba(244,237,224,0.45)",marginTop:3}}>💨 {wx.wind} km/h</div>
+      </div>
+    </div>
+  );
+}
+
+// ─── SPLASH SCREEN ────────────────────────────────────────────────
+function Splash({onDone}) {
+  const [fade, setFade] = useState(false);
+  useEffect(()=>{
+    const t1 = setTimeout(()=>setFade(true), 1800);
+    const t2 = setTimeout(()=>onDone(), 2400);
+    return ()=>{ clearTimeout(t1); clearTimeout(t2); };
+  },[]);
+  return (
+    <div style={{position:"fixed",inset:0,background:"linear-gradient(160deg,#3d2008,#6b3a1f,#4a2510)",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",zIndex:9999,transition:"opacity 0.6s",opacity:fade?0:1,pointerEvents:fade?"none":"all"}}>
+      <img src="https://res.cloudinary.com/dovpg47yh/image/upload/v1774558967/IMG_8927_t7ppwk.png" alt="Baita Maore" style={{width:200,filter:"brightness(0) invert(1)",opacity:0.95,marginBottom:24}}/>
+      <div style={{fontSize:9,letterSpacing:"5px",textTransform:"uppercase",color:"rgba(244,237,224,0.5)",fontFamily:"'Raleway',sans-serif"}}>Laconi · Sardegna</div>
+      <div style={{marginTop:32,width:36,height:2,background:"rgba(244,237,224,0.2)",borderRadius:2,overflow:"hidden"}}>
+        <div style={{height:"100%",background:"rgba(244,237,224,0.6)",borderRadius:2,animation:"loadbar 1.8s ease forwards"}}/>
+      </div>
+      <style>{`@keyframes loadbar{from{width:0}to{width:100%}}`}</style>
+    </div>
+  );
+}
+
+// ─── SCROLL TO TOP ────────────────────────────────────────────────
+function ScrollTop() {
+  const [show, setShow] = useState(false);
+  useEffect(()=>{
+    const el = document.getElementById("app-root");
+    if(!el) return;
+    const onScroll = ()=>setShow(el.scrollTop>300);
+    el.addEventListener("scroll", onScroll);
+    return ()=>el.removeEventListener("scroll", onScroll);
+  },[]);
+  if(!show) return null;
+  return (
+    <button onClick={()=>document.getElementById("app-root")?.scrollTo({top:0,behavior:"smooth"})}
+      style={{position:"fixed",bottom:24,right:20,width:42,height:42,borderRadius:"50%",background:c.brown,border:"none",cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",boxShadow:"0 4px 14px rgba(107,66,38,0.5)",zIndex:998}}>
+      <svg viewBox="0 0 24 24" style={{width:18,height:18,stroke:"white",fill:"none",strokeWidth:2.5}}><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+  );
+}
+
 // ─── SCREENS ─────────────────────────────────────────────────────
 function Carousel({t}) {
   const slides = [
@@ -543,6 +645,11 @@ function PH({go,lang,setLang}) {
         </div>
       </div>
 
+      {/* Weather */}
+      <div style={{padding:"12px 0 0"}}>
+        <Weather lang={lang}/>
+      </div>
+
       {/* Carousel */}
       <Carousel t={t}/>
       {/* Concierge WhatsApp button */}
@@ -560,6 +667,16 @@ function PH({go,lang,setLang}) {
             <svg viewBox="0 0 24 24" style={{width:14,height:14,stroke:"#9a6342",fill:"none",strokeWidth:2}}><polyline points="9 18 15 12 9 6"/></svg>
           </div>
         </a>
+      </div>
+      {/* Share button */}
+      <div style={{padding:"4px 20px 0",display:"flex",justifyContent:"center"}}>
+        <button onClick={()=>{
+          if(navigator.share){navigator.share({title:"Baita Maore — Laconi",text:lang==="it"?"Guida ospiti Baita Maore":"Baita Maore Guest Guide",url:"https://baita-maore.vercel.app"});}
+          else{navigator.clipboard&&navigator.clipboard.writeText("https://baita-maore.vercel.app");alert(lang==="it"?"Link copiato!":"Link copied!");}
+        }} style={{display:"flex",alignItems:"center",gap:8,background:"none",border:`1.5px solid ${c.sand}`,borderRadius:20,padding:"8px 20px",cursor:"pointer",fontSize:12,color:c.muted,fontFamily:"'Raleway',sans-serif",letterSpacing:"1px"}}>
+          <svg viewBox="0 0 24 24" style={{width:14,height:14,stroke:c.muted,fill:"none",strokeWidth:2}}><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          {lang==="it"?"Condividi la guida":"Share the guide"}
+        </button>
       </div>
       <div style={s.sectionLabel}>{t.exploreLabel}</div>
       <div style={s.grid}>
@@ -1121,7 +1238,12 @@ function FAQ({go,lang,setLang}) {
 export default function BaitaMaore() {
   const [screen, setScreen] = useState("home");
   const [lang, setLang] = useState("it");
-  const go = (id) => { setScreen(id); window.scrollTo && window.scrollTo(0,0); };
+  const [splash, setSplash] = useState(true);
+  const go = (id) => {
+    setScreen(id);
+    const el = document.getElementById("app-root");
+    if(el) el.scrollTo({top:0,behavior:"smooth"});
+  };
   const props = { go, lang, setLang };
   const screens = {
     home: <PH {...props}/>, benvenuto: <Benvenuto {...props}/>, checkin: <Checkin {...props}/>,
@@ -1130,5 +1252,13 @@ export default function BaitaMaore() {
     mangiare: <Mangiare {...props}/>, recensioni: <Recensioni {...props}/>,
     social: <Social {...props}/>, faq: <FAQ {...props}/>,
   };
-  return screens[screen] || <PH {...props}/>;
+  return (
+    <>
+      {splash && <Splash onDone={()=>setSplash(false)}/>}
+      <div id="app-root" style={{height:"100vh",overflowY:"auto",overflowX:"hidden"}}>
+        {screens[screen] || <PH {...props}/>}
+      </div>
+      <ScrollTop/>
+    </>
+  );
 }

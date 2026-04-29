@@ -525,7 +525,7 @@ function Weather({lang}) {
 
   if(!wx) return null;
   return (
-    <div style={{margin:"0 20px 0",background:"linear-gradient(135deg,rgba(28,18,8,0.9),rgba(61,32,8,0.9))",backdropFilter:"blur(10px)",borderRadius:18,padding:"16px 18px",border:"1px solid rgba(255,255,255,0.08)"}}>
+    <div style={{background:"linear-gradient(135deg,rgba(28,18,8,0.9),rgba(61,32,8,0.9))",backdropFilter:"blur(10px)",borderRadius:18,padding:"16px 18px",border:"1px solid rgba(255,255,255,0.08)"}}>
       {/* Current weather */}
       <div style={{display:"flex",alignItems:"center",gap:14,marginBottom:14}}>
         <div style={{fontSize:40,flexShrink:0}}>{wx.icon}</div>
@@ -700,7 +700,7 @@ function PH({go,lang,setLang}) {
         ))}
       </div>
       {/* Weather footer */}
-      <div style={{padding:"8px 20px 32px"}}>
+      <div style={{padding:"8px 20px 32px",maxWidth:400,margin:"0 auto"}}>
         <div style={{fontSize:9,letterSpacing:"4px",textTransform:"uppercase",color:c.muted,textAlign:"center",margin:"8px 0 12px"}}>{lang==="it"?"Meteo a Laconi":"Weather in Laconi"}</div>
         <Weather lang={lang}/>
       </div>

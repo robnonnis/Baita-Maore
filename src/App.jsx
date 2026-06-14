@@ -149,7 +149,7 @@ const TR = {
     nearbyLabel: "🗺️ Nei dintorni",
     nearby: [
       { name: "💧 Sa Stiddiosa", desc: "Piscine naturali del Flumendosa (20–30 min).", contact: "ecomuseo-flumendosa@gmail.com · +39 328 497 9486", url: "https://www.ecomuseoflumendosa.it" },
-      { name: "🏛️ Museo Menhir di Laconi", desc: "Unico in Sardegna. Statue preistoriche dei menhir.", url: "https://www.museomenhir.it" },
+      { name: "🏛️ Museo Menhir di Laconi", desc: "Unico in Sardegna. Statue preistoriche dei menhir.", url: "https://www.menhirmuseum.it/" },
       { name: "🚂 Trenino Verde", desc: "Borghi, paesaggi naturali, profumi e sapori della Sardegna autentica.", url: "https://www.treninoverdesardegna.it" },
       { name: "🏞️ Lago San Sebastiano (Isili)", desc: "Pesca sportiva, canoa, arrampicata, escursioni.", url: "https://maps.google.com/?q=Lago+San+Sebastiano+Isili" },
     ],
@@ -165,7 +165,7 @@ const TR = {
       { name: "⚰️ Tomba di Aiodda", sub: "Isili", url: "https://maps.google.com/?q=Tomba+Aiodda+Isili" },
       { name: "🍷 Cantina La Dolce Vigna", sub: "Atzara", tel: "+393288148897", url: "https://maps.google.com/?q=La+Dolce+Vigna+Atzara" },
       { name: "🎨 La Robbia ad Atzara", sub: "Tinture Naturali e Arti Applicate", url: "https://maps.google.com/?q=La+Robbia+Atzara" },
-      { name: "🍄 Museo Etnografico di Mandas", sub: "L'Isola dei Sapori — tartufo sardo", tel: "+393515268835", url: "https://maps.google.com/?q=Museo+Etnografico+Mandas" },
+      { name: "🍄 Museo Etnografico di Mandas", sub: "L'Isola dei Sapori — tartufo sardo", tel: "+393515268835", url:"https://etnograficomandas.com/" },
       { name: "🦇 Grotta Is Janas", sub: "Grotta preistorica", url: "https://maps.google.com/?q=Grotta+Is+Janas+Sardegna" },
       { name: "🌿 Laboratorio Liquori Lugas", sub: "Laconi", url: "https://maps.google.com/?q=Liquori+Lugas+Laconi" },
       { name: "🗿 Su Stampu de su Turrunu", sub: "Sito nuragico", url: "https://maps.google.com/?q=Su+Stampu+de+su+Turrunu+Sardegna" },

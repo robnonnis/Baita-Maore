@@ -1272,11 +1272,10 @@ export default function BaitaMaore() {
   const [screen, setScreen] = useState("home");
   const [lang, setLang] = useState("it");
   const [splash, setSplash] = useState(true);
-  const go = (id) => {
-    setScreen(id);
-    const el = document.getElementById("app-root");
-    if(el) el.scrollTo({top:0,behavior:"smooth"});
-  };
+  const go = (id) => setScreen(id);
+  useEffect(() => {
+    document.getElementById("app-root")?.scrollTo({top:0});
+  }, [screen]);
   const props = { go, lang, setLang };
   const screens = {
     home: <PH {...props}/>, benvenuto: <Benvenuto {...props}/>, checkin: <Checkin {...props}/>,

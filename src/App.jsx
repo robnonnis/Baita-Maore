@@ -210,7 +210,7 @@ const TR = {
     faqTitle: "Domande frequenti",
     faqItems: [
       { q: "🧖 Come prenoto la SPA?", a: "Inviate una email a info@baitamaore.it indicando l'orario preferito (durata 1 ora). Slot: mattina 9:30 / 11:00 · sera 15:00 / 16:30 / 18:00 / 19:30 / 21:30 (dopo cena)." },
-      { q: "🍽️ Posso cenare in Baita ogni sera?", a: "La cena dello chef (4 portate, € 40 a persona) è disponibile in serate speciali. I Taglieri Baita sono disponibili a pranzo e cena." },
+      { q: "🍽️ Posso cenare in Baita ogni sera?", a: "La cena dello chef (4 portate, € 45 a persona) è disponibile in serate speciali. I Taglieri Baita sono disponibili a pranzo e cena." },
       { q: "🚗 Come raggiungo la Baita?", a: "Usate Google Maps cercando Laconi - NU -. Evitate la segnalazione diretta «Baita Maore» che può indicare una strada non accessibile." },
     ],
     faqEmergLabel: "🚨 Emergenze",
@@ -306,7 +306,7 @@ const TR = {
     nearbyLabel: "🗺️ Nearby",
     nearby: [
       { name: "💧 Sa Stiddiosa", desc: "Natural pools of the Flumendosa river (20–30 min).", contact: "ecomuseo-flumendosa@gmail.com · +39 328 497 9486", url: "https://www.ecomuseoflumendosa.it" },
-      { name: "🏛️ Menhir Museum of Laconi", desc: "Unique in Sardinia. Prehistoric menhir statues.", url: "https://www.museomenhir.it" },
+      { name: "🏛️ Menhir Museum of Laconi", desc: "Unique in Sardinia. Prehistoric menhir statues.", url: "https://www.menhirmuseum.it/" },
       { name: "🚂 Trenino Verde", desc: "A unique way to discover authentic Sardinia: villages, natural landscapes, flavours.", url: "https://www.treninoverdesardegna.it" },
       { name: "🏞️ Lake San Sebastiano (Isili)", desc: "Sport fishing, kayak, climbing, hiking. The Trenino Verde runs along the lake.", url: "https://maps.google.com/?q=Lago+San+Sebastiano+Isili" },
     ],
@@ -322,7 +322,7 @@ const TR = {
       { name: "⚰️ Tomba di Aiodda", sub: "Isili", url: "https://maps.google.com/?q=Tomba+Aiodda+Isili" },
       { name: "🍷 Cantina La Dolce Vigna", sub: "Atzara", tel: "+393288148897", url: "https://maps.google.com/?q=La+Dolce+Vigna+Atzara" },
       { name: "🎨 La Robbia ad Atzara", sub: "Natural Dyes and Applied Arts", url: "https://maps.google.com/?q=La+Robbia+Atzara" },
-      { name: "🍄 Ethnographic Museum of Mandas", sub: "L'Isola dei Sapori — Sardinian truffle", tel: "+393515268835", url: "https://maps.google.com/?q=Museo+Etnografico+Mandas" },
+      { name: "🍄 Ethnographic Museum of Mandas", sub: "L'Isola dei Sapori — Sardinian truffle", tel: "+393515268835", url: "https://etnograficomandas.com/" },
       { name: "🦇 Is Janas Cave", sub: "Prehistoric cave", url: "https://maps.google.com/?q=Grotta+Is+Janas+Sardegna" },
       { name: "🌿 Lugas Liqueur Lab", sub: "Laconi", url: "https://maps.google.com/?q=Liquori+Lugas+Laconi" },
       { name: "🗿 Su Stampu de su Turrunu", sub: "Nuragic site", url: "https://maps.google.com/?q=Su+Stampu+de+su+Turrunu+Sardegna" },
@@ -363,7 +363,7 @@ const TR = {
     faqTitle: "FAQ",
     faqItems: [
       { q: "🧖 How do I book the SPA?", a: "Send an email to info@baitamaore.it with your preferred time (1 hour session). Slots: morning 9:30 / 11:00 · evening 15:00 / 16:30 / 18:00 / 19:30 / 21:30 (after dinner)." },
-      { q: "🍽️ Can I have dinner at Baita every evening?", a: "The chef dinner (4 courses, € 40 per person) is available on special evenings. Baita Platters are available at lunch and dinner." },
+      { q: "🍽️ Can I have dinner at Baita every evening?", a: "The chef dinner (4 courses, € 45 per person) is available on special evenings. Baita Platters are available at lunch and dinner." },
       { q: "🚗 How do I reach the Baita?", a: "Use Google Maps searching for Laconi - NU -. Avoid the direct «Baita Maore» navigation which may indicate an inaccessible road." },
     ],
     faqEmergLabel: "🚨 Emergencies",
@@ -1077,7 +1077,7 @@ function Mangiare({go,lang,setLang}) {
         <div style={s.hlTitle}>{t.chefTitle}</div>
         <p style={{fontSize:14,lineHeight:1.7,opacity:0.92,margin:"0 0 10px"}}>{t.chefText}</p>
         <div style={{display:"flex",gap:16,flexWrap:"wrap"}}>
-          <div style={{background:"rgba(255,255,255,0.15)",borderRadius:10,padding:"10px 14px",flex:1,minWidth:100}}><div style={{fontSize:22,fontFamily:"'Playfair Display',serif"}}>€ 40</div><div style={{fontSize:11,opacity:0.8,marginTop:2}}>{t.chefPriceSub}</div></div>
+          <div style={{background:"rgba(255,255,255,0.15)",borderRadius:10,padding:"10px 14px",flex:1,minWidth:100}}><div style={{fontSize:22,fontFamily:"'Playfair Display',serif"}}>€ 45</div><div style={{fontSize:11,opacity:0.8,marginTop:2}}>{t.chefPriceSub}</div></div>
           <div style={{background:"rgba(255,255,255,0.15)",borderRadius:10,padding:"10px 14px",flex:1,minWidth:100}}><div style={{fontSize:22,fontFamily:"'Playfair Display',serif"}}>20:30</div><div style={{fontSize:11,opacity:0.8,marginTop:2}}>{t.chefTimeSub}</div></div>
         </div>
         <a href="mailto:info@baitamaore.it?subject=Cena+Baita" style={{...s.mailBtn,marginTop:14,background:"rgba(255,255,255,0.2)"}}><Ic.mailW/> {t.chefBtn}</a>
@@ -1177,7 +1177,7 @@ function Recensioni({go,lang,setLang}) {
       {/* Platform buttons */}
       <div style={{fontSize:9,letterSpacing:"3px",textTransform:"uppercase",color:c.muted,textAlign:"center",margin:"16px 0 12px"}}>{lang==="it"?"Lascia la tua recensione":"Leave your review"}</div>
 
-      <a href="https://www.google.com/search?sca_esv=3d469d807f837c81&q=Baita+Maore&si=AL3DRZGNtcdgKOqVhotcr-UG2kkYpwR2WO4qu3O00NmpwBmLnelENfgjuP228Sq9Mu0JKBy_z4FZlQPBJQf0ePnqhto70ecszcuDObBbwo6mQQpuIptZpQ0%3D&sa=X&ved=2ahUKEwjp1p-H28WTAxUMgf0HHezMIY4Q_coHegQIMBAB" target="_blank" rel="noreferrer"
+      <a href="https://www.google.com/maps?cid=4992293305573763589" target="_blank" rel="noreferrer"
         style={{display:"flex",alignItems:"center",gap:14,background:c.white,borderRadius:16,padding:"14px 16px",textDecoration:"none",border:`1.5px solid ${c.sand}`,marginBottom:10}}>
         <div style={{width:38,height:38,borderRadius:10,background:"#fff",border:`1px solid ${c.sand}`,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}>
           <svg viewBox="0 0 24 24" style={{width:22,height:22}}><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
@@ -1209,7 +1209,7 @@ function Recensioni({go,lang,setLang}) {
 
       <div style={{...s.darkBox,textAlign:"center",marginTop:4}}>
         <p style={{fontSize:13,color:"rgba(244,237,224,0.75)",lineHeight:1.7,margin:"0 0 12px"}}>{lang==="it"?"La tua recensione aiuta altri viaggiatori a scoprire la Baita Maore. Bastano 2 minuti! 🙏":"Your review helps other travellers discover Baita Maore. It only takes 2 minutes! 🙏"}</p>
-        <a href="https://www.google.com/search?sca_esv=3d469d807f837c81&q=Baita+Maore&si=AL3DRZGNtcdgKOqVhotcr-UG2kkYpwR2WO4qu3O00NmpwBmLnelENfgjuP228Sq9Mu0JKBy_z4FZlQPBJQf0ePnqhto70ecszcuDObBbwo6mQQpuIptZpQ0%3D&sa=X&ved=2ahUKEwjp1p-H28WTAxUMgf0HHezMIY4Q_coHegQIMBAB" target="_blank" rel="noreferrer"
+        <a href="https://www.google.com/maps?cid=4992293305573763589" target="_blank" rel="noreferrer"
           style={{display:"inline-flex",alignItems:"center",gap:8,background:c.brown,color:"white",borderRadius:12,padding:"11px 20px",textDecoration:"none",fontSize:13}}>
           ⭐ {lang==="it"?"Scrivi una recensione":"Write a review"}
         </a>
